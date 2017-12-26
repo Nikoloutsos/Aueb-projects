@@ -1,0 +1,49 @@
+<html>
+<head>
+<!-- Κωνσταντίνος Νικολούτσος - Δημήτρης Μπεκιάρης -->
+<title> Learn Chess | HOME </title>
+<meta charset="UTF-8">
+<style>
+body{
+background: #141E30;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ }
+p,h1,h2,h3,ul,TR,TH,TD{
+color:white
+}
+</style>
+<link rel="stylesheet" href="css/chessboard-0.3.0.min.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="js/chessboard-0.3.0.min.js"></script>
+</head>
+<body>
+<nav style="background:white;border-radius: 40px;margin-left:80px;margin-right:80px">
+<center><div>
+<a href="#" style="border-left: 1px solid #bbb; border-right: 1px solid #bbb; padding-right: 30px ;padding-left: 30px ; font-size:25px;background-color:#D3D3D3;">HOME</a>
+<a href="Practice_learn.html" style="border-right: 1px solid #bbb; padding-right: 30px ;padding-left: 30px ; font-size:20px;">PRACTICE/LEARN</a>
+<a href="Rules.html" style="border-right: 1px solid #bbb; padding-right: 30px ;padding-left: 30px ; font-size:20px;">RULES</a>
+<a href="History.html" style="border-right: 1px solid #bbb; padding-right: 30px ;padding-left: 30px ; font-size:20px;">HISTORY</a>
+<a href="Contact.html" style="border-right: 1px solid #bbb; padding-right: 30px ;padding-left: 30px ; font-size:20px;">CONTACT US</a>
+</div></center>
+</nav>
+<h1 style="color:white;text-align:center">Learn Chess | Μάθε, Παίξε, <strong>Κέρδισε!</strong></h1> <hr>
+<p > Πως να Παίξετε Σκάκι: Κανόνες και τα Βασικά. Ποτέ δεν είναι αργά για να μάθεις πως να παίζεις σκάκι - το δημοφιλέστερο παιχνίδι στον κόσμο!<br>
+Είναι εύκολο να μάθεις τους κανόνες του σκακιού </p>
+ <center> <div id="board2" style="width: 400px"></div>
+<input type="button" id="startBtn" value="Start" />
+<input type="button" id="clearBtn" value="Clear" /> </center>
+<script>var board2 = ChessBoard('board2', {
+  draggable: true,
+  dropOffBoard: 'trash',
+  sparePieces: true
+});
+$('#startBtn').on('click', board2.start);
+$('#clearBtn').on('click', board2.clear);</script>
+
+
+
+
+</body>
+
+
+</html>
