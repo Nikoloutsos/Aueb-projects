@@ -39,6 +39,7 @@ class Question_Game:
             self.show_question(random_question)
             self.give_solution(random_question)
             print("--------------------------------------") #Seperates the questions. //ADD POINTS IF HELPS HAVE NOT BEEN USED.
+        self.points += self.skip*5 + self.fifty*5
         print("********************************************") #Seperates the player's questions.
  
     def show_question(self,random_question):
