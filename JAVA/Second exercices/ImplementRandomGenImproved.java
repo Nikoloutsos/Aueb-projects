@@ -1,30 +1,36 @@
 import acm.program.*;
 public class ImplementRandomGenImproved extends Program{
-	public static void main(String args[]){
-		System.out.println("Welcome. /n Please select one of number of the following. /n 1-->random power of two  ");
-		System.out.println("2-->random square /n 3-->random prime /n 4-->random fibonacci");
-		int users_reply = readInt("-->")
-		while(user_reply!=1 && user_reply!=2 && user_reply!=3 && user_reply!=4){
-			System.out.println("Something went wrong.Please try again.");
-			users_reply = readLine("-->");
-				
-		
-}
-/*
-		System.out.println(RandomGeneratorImproved.rand_powers_of_two(0)); //unit testing for rand_powers_of_two method! 
-		System.out.println(RandomGeneratorImproved.rand_powers_of_two(100,3170122)); 
-		System.out.println("---------------------------------");
-		System.out.println(RandomGeneratorImproved.rand_square(100)); //unit testing for rand_squares method! 
-		System.out.println(RandomGeneratorImproved.rand_square(10,15)); 
-		System.out.println("---------------------------------");
-		System.out.println(RandomGeneratorImproved.rand_prime(152,1000000)); //unit testing for rand_primes method! https://goo.gl/DDsiuN --> Check it this is a prime number
-		System.out.println(RandomGeneratorImproved.rand_prime(1,1)); 
-		System.out.println(RandomGeneratorImproved.rand_prime(100,50)); 
-		System.out.println(RandomGeneratorImproved.rand_prime(10,12)); 
-		System.out.println("---------------------------------");
-		System.out.println(RandomGeneratorImproved.rand_fibonacci(6,1000000000)); //unit testing for rand_primes method!
-		System.out.println(RandomGeneratorImproved.rand_fibonacci(8,9)); 
-		System.out.println(RandomGeneratorImproved.rand_fibonacci(10000000)); 
-		// Feel free to use it. Just keep in mind those methods are static.
-	*/
-}}
+	public void run(){	
+		RandomGeneratorImproved rgen = new RandomGeneratorImproved();
+		System.out.println("GENERATE RANDOM NUMBERS.Please select one type:");
+		int response=0;
+		while (response != -1){
+			System.out.println("----------------------------------------");
+			System.out.println(" 1->Random powers of two. \n 2->Random square numbers \n 3->Random prime \n 4->Random fibonacci");
+			System.out.println("-1->EXIT.");
+			response = readInt("-->");
+			while(response!=1 && response!=2 && response!=3 && response!=4 && response!=-1){
+				System.out.println("Something unexpected happened.Please try again.");
+				response = readInt("-->");
+			}
+			if(response==-1) break;
+			System.out.println("*lower bound must be greater than 0.*");
+			int low_bound = readInt("Lower bound: ");
+			int high_bound = readInt("Higher bound: ");
+			switch(response){
+				case 1: 
+					System.out.println(" OUTPUT ---> "+rgen.rand_powers_of_two(low_bound,high_bound));
+					break;
+				case 2:
+					System.out.println(" OUTPUT ---> "+rgen.rand_square(low_bound,high_bound));
+					break;
+				case 3:
+					System.out.println(" OUTPUT ---> "+rgen.rand_prime(low_bound,high_bound));
+					break;
+				case 4:
+					System.out.println(" OUTPUT ---> "+rgen.rand_fibonacci(low_bound,high_bound));
+					break;
+			}
+		}
+	
+} }

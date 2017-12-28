@@ -1,44 +1,68 @@
 /*Exercice 1 */
 class RandomGeneratorImproved extends acm.util.RandomGenerator{
 	private static acm.util.RandomGenerator rgen = new acm.util.RandomGenerator();
+	public RandomGeneratorImproved(){ //constructor
+		super(); //Call the parent constructor
+	}
 	
-	public static int rand_powers_of_two(int min, int max){
-		if((min<=0 || max < min)) return(-1);
+	public int rand_powers_of_two(int min, int max){
+		if((min<=0 || max < min)) {
+			System.out.println("This range do not have any number of this type.");
+			return(-1);
+		}
 		min = (int)java.lang.Math.ceil((java.lang.Math.log(min)/java.lang.Math.log(2))); // Change-of-Logarithmic_Base Formula mathematics.
 		max = (int)(java.lang.Math.log(max)/java.lang.Math.log(2)); //min is rounded up and max is rounded down.
-		if((max < min)) return(-1);
+		if((max < min)) {
+			System.out.println("This range do not have any number of this type.");
+			return(-1);
+		}
 		return((int)java.lang.Math.pow(2, rgen.nextInt(min, max)));
 	} 
-	public static int rand_powers_of_two(int max){
+	public int rand_powers_of_two(int max){
 		return(rand_powers_of_two(1,max)); //Alternative constructor.
 	} 
 	
-	public static int rand_square(int min, int max){
-		if((min<0 || max < min)) return(-1);
+	public int rand_square(int min, int max){
+		if((min<0 || max < min)){
+			System.out.println("This range do not have any number of this type.");
+			return(-1);
+		}
 		if (min==0) min=1 ; // Because the exercice do not want to produce 0, as output of 0^2.
 		min = (int)java.lang.Math.ceil(java.lang.Math.sqrt(min));
 		max = (int)java.lang.Math.sqrt(max); //min is rounded up and max is rounded down.
-		if((max < min)) return(-1);
+		if((max < min)){
+			System.out.println("This range do not have any number of this type.");
+			return(-1);
+		}
 		return((int)java.lang.Math.pow(rgen.nextInt(min, max), 2));
 	} 
-	public static int rand_square(int max){
+	public int rand_square(int max){
 		return(rand_square(1, max)); //Alternative constructor.
 	}
 	
-	public static int rand_prime(int min, int max){
-		if((min<0 || max < min)) return(-1);
+	public int rand_prime(int min, int max){
+		if((min<0 || max < min)){
+			System.out.println("This range do not have any number of this type.");
+			return(-1);
+		}
 		if (hasAtLeastOnePrime(min,max)){ // It checks if at least 1 prime exists in the interval [min,max].
 		while(true){
 			int temp = rgen.nextInt(min,max);
 			if(checkIfPrime(temp))return(temp); } //BRUTEFORCE
-		}else return(-1);
+		}else{
+			System.out.println("This range do not have any number of this type.");
+			return(-1);
+		}
 		}
 	
-	public static int rand_prime(int max){
-		return(rand_prime(1,max-1)); //Alternative constructor.
+	public int rand_prime(int max){
+		return(rand_prime(1,max-1)); //Alternative constructor
 	} 
-	public static int rand_fibonacci(int min, int max){
-		if(max<min || max<0 || min<0)return(-1);
+	public int rand_fibonacci(int min, int max){
+		if(max<min || max<0 || min<0){
+			System.out.println("This range do not have any number of this type.");
+			return(-1);
+		}
 		int n1 = 1;
 		int n2 = 1;
 		int n3 = 2;
@@ -76,7 +100,10 @@ class RandomGeneratorImproved extends acm.util.RandomGenerator{
 			n2 = n3;
 			accumulator++;
 		}
-		if (accumulator==0)return(-1);
+		if (accumulator==0){
+			System.out.println("This range do not have any number of this type.");
+			return(-1);
+		}
 		int rand_num = rgen.nextInt(1,accumulator);
 		for(int i=1;i<=rand_num;i++){
 			n3 = lower1 + lower2;
@@ -87,7 +114,7 @@ class RandomGeneratorImproved extends acm.util.RandomGenerator{
 	}
 	return(n2);
 	} 
-	public static int rand_fibonacci(int max){
+	public int rand_fibonacci(int max){
 		return(rand_fibonacci(1,max));
 	}
 	private static boolean checkIfPrime(int num){
