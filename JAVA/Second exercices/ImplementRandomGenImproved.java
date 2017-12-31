@@ -14,7 +14,6 @@ public class ImplementRandomGenImproved extends Program{
 				response = readInt("-->");
 			}
 			if(response==-1) break;
-			System.out.println("*lower bound must be greater than 0.*");
 			int low_bound = readInt("Lower bound: ");
 			int high_bound = readInt("Higher bound: ");
 			switch(response){

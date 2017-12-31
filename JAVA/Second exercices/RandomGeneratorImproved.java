@@ -1,11 +1,12 @@
 /*Exercice 1 */
 class RandomGeneratorImproved extends acm.util.RandomGenerator{
 	private static acm.util.RandomGenerator rgen = new acm.util.RandomGenerator();
-	public RandomGeneratorImproved(){ //constructor
+	public RandomGeneratorImproved(){ 
 		super(); //Call the parent constructor
 	}
 	
 	public int rand_powers_of_two(int min, int max){
+		if(min<=0)min=1; 
 		if((min<=0 || max < min)) {
 			System.out.println("This range do not have any number of this type.");
 			return(-1);
@@ -23,6 +24,7 @@ class RandomGeneratorImproved extends acm.util.RandomGenerator{
 	} 
 	
 	public int rand_square(int min, int max){
+		if(min<=0) min=1;
 		if((min<0 || max < min)){
 			System.out.println("This range do not have any number of this type.");
 			return(-1);
@@ -41,7 +43,8 @@ class RandomGeneratorImproved extends acm.util.RandomGenerator{
 	}
 	
 	public int rand_prime(int min, int max){
-		if((min<0 || max < min)){
+		if(min<=0)min=1;
+		if((min<=0 || max < min)){
 			System.out.println("This range do not have any number of this type.");
 			return(-1);
 		}
@@ -54,11 +57,12 @@ class RandomGeneratorImproved extends acm.util.RandomGenerator{
 			return(-1);
 		}
 		}
-	
 	public int rand_prime(int max){
-		return(rand_prime(1,max-1)); //Alternative constructor
+		return(rand_prime(1,max)); //Alternative constructor
 	} 
+	
 	public int rand_fibonacci(int min, int max){
+		if(min<=0)min=1;
 		if(max<min || max<0 || min<0){
 			System.out.println("This range do not have any number of this type.");
 			return(-1);
@@ -117,6 +121,7 @@ class RandomGeneratorImproved extends acm.util.RandomGenerator{
 	public int rand_fibonacci(int max){
 		return(rand_fibonacci(1,max));
 	}
+	
 	private static boolean checkIfPrime(int num){
 		double sqrt = java.lang.Math.sqrt(num);
 		for(int i=2;i<=sqrt;i++){
