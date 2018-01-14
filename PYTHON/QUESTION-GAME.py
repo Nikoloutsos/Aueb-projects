@@ -132,7 +132,7 @@ class Question_Game:
             print(l[index_of_random], Question_Game.quest[random_question][1][index_of_random])
             print(l[index_of_question], Question_Game.quest[random_question][2][0])
         ans = input("Your answer is: ").upper()
-        while(ans!=l[index_of_random][0] and ans!=l[index_of_question][0]):
+        while(ans!=l[index_of_random][0] and ans!=l[index_of_question][0] and ans!='S'):
             if(index_of_question>index_of_random):
                 print("Something went wrong! \n Please choose either",l[index_of_random][0],"or ",l[index_of_question][0])
             else:
