@@ -16,11 +16,9 @@ public class Company {
 	//Add to the company
 	public void addBuilding(String code, String description, String address, double zoneCost, double squareMeters) {
 		if (!codeAlreadyExists(code)) {
-			Building newbuilding =  new Building(this, code, description, address, zoneCost, squareMeters );
+			Building newbuilding =  new Building(code, description, address, zoneCost, squareMeters );
 			buildings.add(newbuilding);
-		}else {
-			System.out.println("We are sorry but this code is already in use,try another one!");
-			}
+		}
 	}
 	public void addExpenseTypeWater(String code, String description, double monthlyFee, double costPerUnit, double extra) {
 		if (!codeAlreadyExistsAtExpensesType(code)) {
@@ -67,25 +65,34 @@ public class Company {
 	public void printAllBuildings() {
 		if (buildings.size() == 0) System.out.println("Company named" + this.getName() + "has not any buildings yet!");
 		System.out.println("Company named " + this.getName() + " has " + this.getBuildings().size() + " buildings:");
-		System.out.println("--------------------------------------------------------------");
+		System.out.println();
 		for (Building currentBuilding : buildings) {
 			System.out.println(currentBuilding);
 			System.out.println("");
 		}
-		System.out.println("--------------------------------------------------------------");
+		System.out.println();
 
 	}
 	public void printExpensesOfBuilding(Building building) {
-		System.out.println("The building " + building + "Has the following expenses:");
-		System.out.println("");
+		System.out.println("The building " + building + "Has the following expenses: \n");
 		for(Expense currentExpense : expenses) {
 			if (currentExpense.getBuilding() == building) {
-				System.out.println(currentExpense.getType().getClass());
+				System.out.println(currentExpense.getType());
+				System.out.println();
 			}
-			
 		}
+		System.out.println();
+		System.out.println();
 	}
 	
+	public void printAllExpenses() {
+		for (ExpenseType currentExpenseType : expensesType) {
+			System.out.println(currentExpenseType);
+			System.out.println();
+		}
+		System.out.println();
+		System.out.println();
+	}
 	// Methods about checking
 	public boolean codeAlreadyExistsAtExpensesType(String code) {
 		if (expensesType.size() == 0) return false;
@@ -106,7 +113,25 @@ public class Company {
 		}
 		return false;
 	}
+	
+	public boolean expenseTypeAlreadyExistsAtBuilding(Building building, ExpenseType expenseType) {
+		for (Expense currentExpense : expenses) {
+			if (currentExpense.getBuilding() == building && currentExpense.getType() == expenseType) {
+				return true;
+			}
+		}
+		return false;
+	}
 	// Calculation methods
+	public double calculateCostOfSpecificExpenseType(ExpenseType expenseType) {
+		double total = 0;
+		for (Expense currentExpense : this.getExpenses()) {
+			if(currentExpense.getType() == expenseType) {
+				total += currentExpense.getType().calculateCost(currentExpense);
+			}
+		}
+		return total;
+	}
 	public double calculateBuildingCost(Building building) {
 		double sum = 0;
 		for (Expense currentExpense : expenses) {

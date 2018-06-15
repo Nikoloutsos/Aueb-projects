@@ -3,7 +3,6 @@ public class Water extends VariableExpense {
 	private double secondaryCostPerUnit;
 	
 	public Water(String code, String description, double monthlyFee, double costPerUnit, double secondaryCostPerUnit) {
-		// TODO Auto-generated constructor stub
 		super(code, description, costPerUnit, "m^3", monthlyFee);
 		this.secondaryCostPerUnit = secondaryCostPerUnit;
 		
@@ -26,4 +25,12 @@ public class Water extends VariableExpense {
 		return secondaryCostPerUnit;
 	}
 	
+	@Override
+	public String toString() {
+		return "Code : " + this.getCode() + "\n"
+				+ "Description: " + this.getDescription() + "\n"
+						+ "Monthly fee: " + this.getMonthlyFee() + "\n"
+								+ "Cost Per Unit(m^3): " + this.getCostPerUnit() + "\n"
+										+ "Secondary Cost Per Unit: " + this.getSecondaryCostPerUnit();
+	}
 }

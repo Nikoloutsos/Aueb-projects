@@ -8,5 +8,13 @@ public class Cleaning extends FixedExpense {
 	public double calculateCost(Expense exp) {
 		return getCostPerSquare()*exp.getBuilding().getSquareMeters();
 	}
+	
+	@Override
+	public String toString() {
+		return "Code : " + this.getCode() + "\n"
+				+ "Description: " + this.getDescription() + "\n"
+						+ "Cost Per Sqare (m^2): " + this.getCostPerSquare();
+								
+	}
 
 }

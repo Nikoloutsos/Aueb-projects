@@ -2,7 +2,6 @@
 public class Telephone extends VariableExpense{
 	private double monthlyCostTelephone;
 	public Telephone(String code, String description, double monthlyfee, double costPerUnit, double monthlyCostTelephone) {
-		// TODO Auto-generated constructor stub
 		super(code, description, costPerUnit, "min", monthlyfee);
 		this.monthlyCostTelephone = monthlyCostTelephone;
 		
@@ -15,6 +14,15 @@ public class Telephone extends VariableExpense{
 	}
 	public double getMonthlyCostTelephone() {
 		return monthlyCostTelephone;
+	}
+	
+	@Override
+	public String toString() {
+		return "Code : " + this.getCode() + "\n"
+				+ "Description: " + this.getDescription() + "\n"
+						+ "Monthly fee: " + this.getMonthlyFee() + "\n"
+								+ "Cost Per Unit(minutes): " + this.getCostPerUnit() + "\n"
+										+ "Monthly Cost Telephone: " + this.getMonthlyCostTelephone();
 	}
 
 }

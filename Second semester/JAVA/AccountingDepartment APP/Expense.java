@@ -24,4 +24,8 @@ public class Expense {
 	public double getMonthlyConsumption() {
 		return monthlyConsumption;
 	}
+	
+	public void setMonthlyConsumption(double monthlyConsumption) {
+		this.monthlyConsumption = monthlyConsumption;
+	}
 }

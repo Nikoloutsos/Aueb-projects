@@ -1,14 +1,12 @@
 
 public class Building {
-	private Company company;
 	private String code;
 	private String description;
 	private String address;
 	private double zoneCost;
 	private double squareMeters;
 	
-	public Building(Company company, String code, String description, String address, double zoneCost, double squareMeters) {
-		this.company = company;
+	public Building(String code, String description, String address, double zoneCost, double squareMeters) {
 		this.code = code;
 		this.description = description;
 		this.address = address;
@@ -33,20 +31,23 @@ public class Building {
 	public double getZoneCost() {
 		return zoneCost;
 	}
-	public Company getCompany() {
-		return company;
+	public void setCode(String code) {
+		this.code = code;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public void setSquareMeters(double squareMeters) {
+		this.squareMeters = squareMeters;
 	}
 	
-	public void setCode(String code) {
-		// Make sure that every code is unique.
-		if (company.codeAlreadyExists(code)) {
-			System.out.println("Sorry but another building has the same code! \n"
-					+ " Please choose another code..");
-			
-		}else {
-			this.code = code;
-		}
+	public void setZoneCost(double zoneCost) {
+		this.zoneCost = zoneCost;
 	}
+	
 	
 	
 @Override

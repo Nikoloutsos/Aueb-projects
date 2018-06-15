@@ -1,0 +1,219 @@
+BUILDING_LIST
+{
+    BUILDING
+    {
+        BUILDING_CODE   001
+        BUILDING_DESCR   this is the description of building 001
+        ADDRESS   Alexandras Avenue
+        SURFACE   170.0
+        ZONECOST   7.0
+        EXPENSES
+        {
+            EXPENSE
+            {
+                EXPENSE_TYPE_CODE   R 001
+                TYPE   Rent
+                CONSUMPTION   0.0
+            }
+            EXPENSE
+            {
+                EXPENSE_TYPE_CODE   C 001
+                TYPE   Cleaning
+                CONSUMPTION   0.0
+            }
+            EXPENSE
+            {
+                EXPENSE_TYPE_CODE   W 001
+                TYPE   Water
+                CONSUMPTION   300.0
+            }
+            EXPENSE
+            {
+                EXPENSE_TYPE_CODE   E 001
+                TYPE   Energy
+                CONSUMPTION   130.0
+            }
+        }
+    }
+    BUILDING
+    {
+        BUILDING_CODE   002
+        BUILDING_DESCR   this is the description of building 002
+        ADDRESS   Axarnwn 51
+        SURFACE   100.0
+        ZONECOST   5.0
+        EXPENSES
+        {
+            EXPENSE
+            {
+                EXPENSE_TYPE_CODE   R 001
+                TYPE   Rent
+                CONSUMPTION   0.0
+            }
+            EXPENSE
+            {
+                EXPENSE_TYPE_CODE   C 001
+                TYPE   Cleaning
+                CONSUMPTION   0.0
+            }
+            EXPENSE
+            {
+                EXPENSE_TYPE_CODE   W 001
+                TYPE   Water
+                CONSUMPTION   311.0
+            }
+            EXPENSE
+            {
+                EXPENSE_TYPE_CODE   E 001
+                TYPE   Energy
+                CONSUMPTION   12.3
+            }
+            EXPENSE
+            {
+                EXPENSE_TYPE_CODE   T 001
+                TYPE   Telephone
+                CONSUMPTION   123.0
+            }
+        }
+    }
+    BUILDING
+    {
+        BUILDING_CODE   003
+        BUILDING_DESCR   this is the description of building 003
+        ADDRESS   Megalonhswn 11
+        SURFACE   155.0
+        ZONECOST   2.0
+        EXPENSES
+        {
+            EXPENSE
+            {
+                EXPENSE_TYPE_CODE   R 001
+                TYPE   Rent
+                CONSUMPTION   0.0
+            }
+            EXPENSE
+            {
+                EXPENSE_TYPE_CODE   C 001
+                TYPE   Cleaning
+                CONSUMPTION   0.0
+            }
+            EXPENSE
+            {
+                EXPENSE_TYPE_CODE   W 001
+                TYPE   Water
+                CONSUMPTION   444.0
+            }
+            EXPENSE
+            {
+                EXPENSE_TYPE_CODE   E 001
+                TYPE   Energy
+                CONSUMPTION   44.3
+            }
+        }
+    }
+    BUILDING
+    {
+        BUILDING_CODE   004
+        BUILDING_DESCR   this is the description of building 004
+        ADDRESS   kyparissou 66
+        SURFACE   224.0
+        ZONECOST   12.0
+        EXPENSES
+        {
+            EXPENSE
+            {
+                EXPENSE_TYPE_CODE   R 001
+                TYPE   Rent
+                CONSUMPTION   0.0
+            }
+            EXPENSE
+            {
+                EXPENSE_TYPE_CODE   C 001
+                TYPE   Cleaning
+                CONSUMPTION   0.0
+            }
+            EXPENSE
+            {
+                EXPENSE_TYPE_CODE   W 001
+                TYPE   Water
+                CONSUMPTION   346.0
+            }
+            EXPENSE
+            {
+                EXPENSE_TYPE_CODE   E 001
+                TYPE   Energy
+                CONSUMPTION   123.0
+            }
+            EXPENSE
+            {
+                EXPENSE_TYPE_CODE   T 002
+                TYPE   Telephone
+                CONSUMPTION   111.0
+            }
+        }
+    }
+    BUILDING
+    {
+        BUILDING_CODE   005
+        BUILDING_DESCR   this is the description of building 005
+        ADDRESS   gyzi 13
+        SURFACE   120.0
+        ZONECOST   7.0
+        EXPENSES
+        {
+            EXPENSE
+            {
+                EXPENSE_TYPE_CODE   R 001
+                TYPE   Rent
+                CONSUMPTION   0.0
+            }
+            EXPENSE
+            {
+                EXPENSE_TYPE_CODE   C 001
+                TYPE   Cleaning
+                CONSUMPTION   0.0
+            }
+            EXPENSE
+            {
+                EXPENSE_TYPE_CODE   W 001
+                TYPE   Water
+                CONSUMPTION   100.0
+            }
+            EXPENSE
+            {
+                EXPENSE_TYPE_CODE   E 001
+                TYPE   Energy
+                CONSUMPTION   233.0
+            }
+            EXPENSE
+            {
+                EXPENSE_TYPE_CODE   T 001
+                TYPE   Telephone
+                CONSUMPTION   65.0
+            }
+        }
+    }
+    BUILDING
+    {
+        BUILDING_CODE   006
+        BUILDING_DESCR   DESCR 006
+        ADDRESS   mykonos
+        SURFACE   166.0
+        ZONECOST   22.0
+        EXPENSES
+        {
+            EXPENSE
+            {
+                EXPENSE_TYPE_CODE   T 002
+                TYPE   Telephone
+                CONSUMPTION   120.0
+            }
+            EXPENSE
+            {
+                EXPENSE_TYPE_CODE   C 001
+                TYPE   Cleaning
+                CONSUMPTION   0.0
+            }
+        }
+    }
+}
