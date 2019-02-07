@@ -8,3 +8,7 @@ We learned the usage of virtual keyword in c++ and how to organise our files so 
 
 ![Preview](https://i.imgur.com/zz3haRu.png)
 ![Preview2](https://i.imgur.com/pKrmXmj.png)
+
+
+## Partner
+Jenny Bolena [@JennyBolena](https://github.com/jennybolena)
