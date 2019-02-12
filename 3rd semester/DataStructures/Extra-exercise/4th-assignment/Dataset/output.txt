@@ -1,0 +1,19 @@
+# Αγνοήστε τους χρόνους εκτέλεσης, οι χρόνοι διαφέρουν ανάλογα με την ταχύτητα της CPU
+
+dataset: dataset-1000/data-1000.dat
+requests: dataset-1000/requests-10000.dat
+cache size: 100 items (10% of all items)
+output:
+---------------------------------------------------
+Read 10000 items in XXXXX ms
+Stats: lookups 10000, hits 1030, hit-ratio 0.103000
+
+***************************************************
+
+dataset: dataset-5000/data-5000.dat
+requests: dataset-5000/requests-100000.dat
+cache size: 500 items (10% of all items)
+output:
+---------------------------------------------------
+Read 100000 items in XXXXX ms
+Stats: lookups 100000, hits 10074, hit-ratio 0.100740
