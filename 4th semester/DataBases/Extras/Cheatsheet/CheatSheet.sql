@@ -31,6 +31,20 @@ FROM Orders;
 SELECT AVG(Orders.OrderID)
 FROM Orders;
 
+--Alter
+--add column
+Alter table Orders
+add orderPrice money;
+
+--drop column
+Alter table Orders
+drop column orderDate;
+
+--add foreign key
+Alter table Orders
+add FOREIGN KEY(customerId) ReferencesCustomers(customerId);
+
+
 
 
   
