@@ -31,6 +31,9 @@ FROM Orders;
 SELECT AVG(Orders.OrderID)
 FROM Orders;
 
+--Drop/delete table
+DROP TABLE table_name;
+
 --Alter
 --add column
 Alter table Orders
