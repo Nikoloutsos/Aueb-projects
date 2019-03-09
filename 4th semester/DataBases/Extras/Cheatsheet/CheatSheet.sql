@@ -1,4 +1,6 @@
-
+/*Full
+ line comment*/
+ 
 --Inner Join
 SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate
 FROM Orders, Customers
@@ -43,6 +45,8 @@ drop column orderDate;
 --add foreign key
 Alter table Orders
 add FOREIGN KEY(customerId) ReferencesCustomers(customerId);
+
+
 
 
 
