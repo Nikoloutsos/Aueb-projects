@@ -1,0 +1,401 @@
+/* Vacuum for all tables were executed and enable_seqscan wa set to off*/
+--------------------------------------------------------------------------------------------------------------------------------------------
+QUERY 1
+EXPLAIN ANALYZE
+SELECT Listing.id, COUNT(*) FROM Listing, Review 
+WHERE Listing.id = Review.listing_id 
+GROUP BY Listing.id;
+
+BEFORE ADDING INDEX    
+--------------------------------------------------------------------------------------------------------------------------------------------
+ HashAggregate  (cost=4914.79..5011.42 rows=9663 width=12) (actual time=148.709..150.652 rows=6007 loops=1)
+   Group Key: listing.id
+   ->  Hash Join  (cost=382.44..4242.04 rows=134550 width=4) (actual time=5.456..105.936 rows=134550 loops=1)
+         Hash Cond: (review.listing_id = listing.id)
+         ->  Index Only Scan using idx2 on review  (cost=0.42..3506.67 rows=134550 width=4) (actual time=0.015..34.837 rows=134550 loops=1)
+               Heap Fetches: 0
+         ->  Hash  (cost=261.23..261.23 rows=9663 width=4) (actual time=5.376..5.376 rows=9663 loops=1)
+               Buckets: 16384  Batches: 1  Memory Usage: 468kB
+               ->  Index Only Scan using idx on listing  (cost=0.29..261.23 rows=9663 width=4) (actual time=0.015..2.518 rows=9663 loops=1)
+                     Heap Fetches: 0
+ Planning time: 0.214 ms
+ Execution time: 151.955 ms
+ -------------------------------------------------------------------------------------------------------------------------------------------
+
+ AFTER ADDING INDEX
+ -------------------------------------------------------------------------------------------------------------------------------------------
+  HashAggregate  (cost=4914.79..5011.42 rows=9663 width=12) (actual time=143.573..145.535 rows=6007 loops=1)
+   Group Key: listing.id
+   ->  Hash Join  (cost=382.44..4242.04 rows=134550 width=4) (actual time=5.305..102.602 rows=134550 loops=1)
+         Hash Cond: (review.listing_id = listing.id)
+         ->  Index Only Scan using listing_id_index_for_review on review  (cost=0.42..3506.67 rows=134550 width=4) (actual time=0.012..34.205 rows=134550 loops=1)
+               Heap Fetches: 0
+         ->  Hash  (cost=261.23..261.23 rows=9663 width=4) (actual time=5.272..5.272 rows=9663 loops=1)
+               Buckets: 16384  Batches: 1  Memory Usage: 468kB
+               ->  Index Only Scan using idx on listing  (cost=0.29..261.23 rows=9663 width=4) (actual time=0.009..2.556 rows=9663 loops=1)
+                     Heap Fetches: 0
+ Planning time: 0.217 ms
+ Execution time: 146.767 ms
+ -------------------------------------------------------------------------------------------------------------------------------------------
+/* Query 1: w/out index: 151.955 ms, w/index: 146.767 ms */
+--------------------------------------------------------------------------------------------------------------------------------------------
+/*the listing.id is primary key so no need to add it as index, review.listing_id which is in where clause(everything that is in
+where clauses we want it to be searche faster
+basicly )  is enough*/
+--------------------------------------------------------------------------------------------------------------------------------------------
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+QUERY 2
+EXPLAIN ANALYZE
+SELECT id, listing_url, review_scores_rating, price FROM Listing
+WHERE guests_included > 5 AND review_scores_rating > 90
+AND price < 300;
+
+BEFORE ADDING INDEX
+--------------------------------------------------------------------------------------------------------------------------
+ Seq Scan on listing  (cost=10000000000.00..10000002368.10 rows=152 width=61) (actual time=0.033..9.968 rows=142 loops=1)
+   Filter: ((guests_included > 5) AND (review_scores_rating > '90'::numeric) AND (price < '300'::numeric))
+   Rows Removed by Filter: 9521
+ Planning time: 0.136 ms
+ Execution time: 10.024 ms
+ --------------------------------------------------------------------------------------------------------------------------
+
+ AFTER ADDING INDEX
+ -------------------------------------------------------------------------------------------------------------------------------------------
+ Bitmap Heap Scan on listing  (cost=20.22..491.13 rows=149 width=61) (actual time=0.090..0.373 rows=142 loops=1)
+   Recheck Cond: ((guests_included > 5) AND (price < '300'::numeric) AND (review_scores_rating > '90'::numeric))
+   Heap Blocks: exact=136
+   ->  Bitmap Index Scan on guests_included_index_for_listing  (cost=0.00..20.18 rows=149 width=0) (actual time=0.071..0.072 rows=142 loops=1)
+         Index Cond: ((guests_included > 5) AND (price < '300'::numeric) AND (review_scores_rating > '90'::numeric))
+ Planning time: 0.131 ms
+ Execution time: 0.420 ms
+ -------------------------------------------------------------------------------------------------------------------------------------------
+/* Query 2: w/out index: 10.024 ms, w/index: 0.420 ms */
+--------------------------------------------------------------------------------------------------------------------------------------------
+--Why there is  need to add price as index:
+/*there are almost a quarter of listings with price greater than 300 so we don't wont to search them , that's
+why we add price to the index, same also for the other two*/
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+QUERY 3
+EXPLAIN ANALYZE
+SELECT count(amenity_id), listing_id  FROM listing_amenity_connection
+GROUP BY listing_id
+ORDER BY count(amenity_id) DESC;
+
+No INDEX NEEDED
+BEFORE ADDING INDEX
+--------------------------------------------------------------------------------------------------------------------------
+  Sort  (cost=6041.57..6064.92 rows=9343 width=12) (actual time=88.934..91.293 rows=9535 loops=1)
+   Sort Key: (count(amenity_id)) DESC
+   Sort Method: quicksort  Memory: 831kB
+   ->  GroupAggregate  (cost=0.42..5425.41 rows=9343 width=12) (actual time=0.038..85.979 rows=9535 loops=1)
+         Group Key: listing_id
+         ->  Index Only Scan using listing_amenity_connection_pkey on listing_amenity_connection  (cost=0.42..4473.09 rows=171778 width=8) (actual time=0.019..41.903 rows=171995 loops=1)
+               Heap Fetches: 0
+ Planning time: 0.075 ms
+ Execution time: 93.007 ms
+ --------------------------------------------------------------------------------------------------------------------------
+
+ AFTER ADDING INDEX
+ -------------------------------------------------------------------------------------------------------------------------------------------
+ Sort  (cost=6045.91..6069.26 rows=9343 width=12) (actual time=90.629..92.976 rows=9535 loops=1)
+   Sort Key: (count(amenity_id)) DESC
+   Sort Method: quicksort  Memory: 831kB
+   ->  GroupAggregate  (cost=0.42..5429.75 rows=9343 width=12) (actual time=0.033..87.630 rows=9535 loops=1)
+         Group Key: listing_id
+         ->  Index Only Scan using lac_index on listing_amenity_connection  (cost=0.42..4476.35 rows=171995 width=8) (actual time=0.019..42.344 rows=171995 loops=1)
+               Heap Fetches: 0
+ Planning time: 0.087 ms
+ Execution time: 94.672 ms
+ -------------------------------------------------------------------------------------------------------------------------------------------
+/* Query 3: w/out index: 93.007 ms, w/index: 94.672 ms */
+--------------------------------------------------------------------------------------------------------------------------------------------
+/*No indexes needed because amenity_id and listing_-id combined are primary(primary keys are like indexes)*/
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+QUERY 4
+EXPLAIN ANALYZE
+select listing_amenity_connection.listing_id, listing_amenity_connection.amenity_id, amenity.amenity_name
+from listing_amenity_connection, amenity
+where listing_amenity_connection.amenity_id = amenity.id
+ORDER BY(listing_amenity_connection.listing_id);
+
+BEFORE ADDING INDEX
+--------------------------------------------------------------------------------------------------------------------------
+  Sort  (cost=24639.58..25069.57 rows=171995 width=40) (actual time=275.560..317.622 rows=171995 loops=1)
+   Sort Key: listing_amenity_connection.listing_id
+   Sort Method: external sort  Disk: 5352kB
+   ->  Hash Join  (cost=13.96..4978.89 rows=171995 width=40) (actual time=0.066..130.675 rows=171995 loops=1)
+         Hash Cond: (listing_amenity_connection.amenity_id = amenity.id)
+         ->  Index Only Scan using listing_amenity_connection_pkey on listing_amenity_connection  (cost=0.42..4476.35 rows=171995 width=8) (actual time=0.018..45.677 rows=171995 loops=1)
+               Heap Fetches: 0
+         ->  Hash  (cost=12.91..12.91 rows=51 width=36) (actual time=0.041..0.041 rows=51 loops=1)
+               Buckets: 1024  Batches: 1  Memory Usage: 11kB
+               ->  Index Scan using amenity_pkey on amenity  (cost=0.14..12.91 rows=51 width=36) (actual time=0.006..0.024 rows=51 loops=1)
+ Planning time: 0.137 ms
+ Execution time: 349.550 ms
+ --------------------------------------------------------------------------------------------------------------------------
+
+ AFTER ADDING INDEX
+ -------------------------------------------------------------------------------------------------------------------------------------------
+ Sort  (cost=24639.58..25069.57 rows=171995 width=40) (actual time=267.738..310.039 rows=171995 loops=1)
+   Sort Key: listing_amenity_connection.listing_id
+   Sort Method: external sort  Disk: 5352kB
+   ->  Hash Join  (cost=13.96..4978.89 rows=171995 width=40) (actual time=0.065..129.980 rows=171995 loops=1)
+         Hash Cond: (listing_amenity_connection.amenity_id = amenity.id)
+         ->  Index Only Scan using listing_amenity_connection_pkey on listing_amenity_connection  (cost=0.42..4476.35 rows=171995 width=8) (actual time=0.018..45.536 rows=171995 loops=1)
+               Heap Fetches: 0
+         ->  Hash  (cost=12.91..12.91 rows=51 width=36) (actual time=0.040..0.040 rows=51 loops=1)
+               Buckets: 1024  Batches: 1  Memory Usage: 11kB
+               ->  Index Scan using amenity_pkey on amenity  (cost=0.14..12.91 rows=51 width=36) (actual time=0.006..0.023 rows=51 loops=1)
+ Planning time: 0.137 ms
+ Execution time: 342.116 ms
+ ------------------------------------------------------------------------------------------------------------------------------------------
+/* Query 4: w/out index: 349.550 ms, w/index: 342.116 ms */
+-------------------------------------------------------------------------------------------------------------------------------------------
+/*only this field needed an index because all the others are primary keys, the times that are displayed in the plan are after many 
+executions without and then with indexes and we see that the execution time is slightly better when index is used*/
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+QUERY 5
+EXPLAIN ANALYZE
+select listing.id, host.id, host.city, host.state, host.country 
+from listing, host
+where listing.host_id = host.id
+order by(host.id);
+
+
+BEFORE ADDING INDEX
+--------------------------------------------------------------------------------------------------------------------------
+  Merge Join  (cost=10000002935.52..10000008706.86 rows=9663 width=33) (actual time=12.770..28.393 rows=9663 loops=1)
+   Merge Cond: (listing.host_id = host.id)
+   ->  Sort  (cost=10000002935.24..10000002959.39 rows=9663 width=8) (actual time=12.748..15.400 rows=9663 loops=1)
+         Sort Key: listing.host_id
+         Sort Method: quicksort  Memory: 837kB
+         ->  Seq Scan on listing  (cost=10000000000.00..10000002295.63 rows=9663 width=8) (actual time=0.005..8.895 rows=9663 loops=1)
+   ->  Index Scan using host_pkey on host  (cost=0.28..5607.95 rows=7492 width=29) (actual time=0.015..5.733 rows=7492 loops=1)
+ Planning time: 0.176 ms
+ Execution time: 30.218 ms
+ --------------------------------------------------------------------------------------------------------------------------
+
+ AFTER ADDING INDEX
+ -------------------------------------------------------------------------------------------------------------------------------------------
+Merge Join  (cost=10000002935.52..10000008706.86 rows=9663 width=33) (actual time=12.918..28.322 rows=9663 loops=1)
+   Merge Cond: (listing.host_id = host.id)
+   ->  Sort  (cost=10000002935.24..10000002959.39 rows=9663 width=8) (actual time=12.900..15.354 rows=9663 loops=1)
+         Sort Key: listing.host_id
+         Sort Method: quicksort  Memory: 837kB
+         ->  Seq Scan on listing  (cost=10000000000.00..10000002295.63 rows=9663 width=8) (actual time=0.005..9.069 rows=9663 loops=1)
+   ->  Index Scan using host_pkey on host  (cost=0.28..5607.95 rows=7492 width=29) (actual time=0.012..5.771 rows=7492 loops=1)
+ Planning time: 0.175 ms
+ Execution time: 30.143 ms
+ -------------------------------------------------------------------------------------------------------------------------------------------
+/* Query 5: w/out index: 30.218 ms, w/index: 30.143 ms */
+-------------------------------------------------------------------------------------------------------------------------------------------
+/*no need for index, time still remains the same after adding index, listing.id and host.id are primary keys 
+so they  don't need to become indexes, we care about creating indexes with fields that are in where clauses, also by 
+adding listing.host_id as index nothing changes*/
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+QUERY 6
+EXPLAIN ANALYZE
+select listing.id as listing_id, host.id as host_id, listing.listing_url, listing.weekly_price, listing.beds from listing
+inner join host on host.id = listing.host_id
+group by listing.id, host.id , listing.listing_url
+having listing.weekly_price >=500 and listing.weekly_price <=1000 and listing.beds>=4 and listing.beds<=6
+order by listing.weekly_price desc;
+
+
+BEFORE ADDING INDEX
+--------------------------------------------------------------------------------------------------------------------------
+  Sort  (cost=10000002628.23..10000002628.45 rows=86 width=54) (actual time=8.644..8.651 rows=35 loops=1)
+   Sort Key: listing.weekly_price DESC
+   Sort Method: quicksort  Memory: 29kB
+   ->  Group  (cost=10000002624.82..10000002625.47 rows=86 width=54) (actual time=8.587..8.614 rows=35 loops=1)
+         Group Key: listing.id, host.id
+         ->  Sort  (cost=10000002624.82..10000002625.04 rows=86 width=54) (actual time=8.585..8.593 rows=35 loops=1)
+               Sort Key: listing.id, host.id
+               Sort Method: quicksort  Memory: 29kB
+               ->  Nested Loop  (cost=10000000000.28..10000002622.06 rows=86 width=54) (actual time=0.565..8.556 rows=35 loops=1)
+                     ->  Seq Scan on listing  (cost=10000000000.00..10000002392.26 rows=86 width=54) (actual time=0.556..8.441 rows=35 loops=1)
+                           Filter: ((weekly_price >= '500'::numeric) AND (weekly_price <= '1000'::numeric) AND (beds >= 4) AND (beds <= 6))
+                           Rows Removed by Filter: 9628
+                     ->  Index Only Scan using host_pkey on host  (cost=0.28..2.67 rows=1 width=4) (actual time=0.002..0.002 rows=1 loops=35)
+                           Index Cond: (id = listing.host_id)
+                           Heap Fetches: 0
+ Planning time: 0.273 ms
+ Execution time: 8.698 ms
+ --------------------------------------------------------------------------------------------------------------------------
+
+ AFTER ADDING INDEX
+ -------------------------------------------------------------------------------------------------------------------------------------------
+ Sort  (cost=549.36..549.57 rows=86 width=54) (actual time=0.344..0.350 rows=35 loops=1)
+   Sort Key: listing.weekly_price DESC
+   Sort Method: quicksort  Memory: 29kB
+   ->  Group  (cost=545.95..546.60 rows=86 width=54) (actual time=0.293..0.319 rows=35 loops=1)
+         Group Key: listing.id, host.id
+         ->  Sort  (cost=545.95..546.17 rows=86 width=54) (actual time=0.292..0.299 rows=35 loops=1)
+               Sort Key: listing.id, host.id
+               Sort Method: quicksort  Memory: 29kB
+               ->  Nested Loop  (cost=22.08..543.19 rows=86 width=54) (actual time=0.116..0.269 rows=35 loops=1)
+                     ->  Bitmap Heap Scan on listing  (cost=21.80..313.39 rows=86 width=54) (actual time=0.108..0.177 rows=35 loops=1)
+                           Recheck Cond: ((weekly_price >= '500'::numeric) AND (weekly_price <= '1000'::numeric) AND (beds >= 4) AND (beds <= 6))
+                           Heap Blocks: exact=35
+                           ->  Bitmap Index Scan on weekly_price_beds_index  (cost=0.00..21.78 rows=86 width=0) (actual time=0.099..0.099 rows=35 loops=1)
+                                 Index Cond: ((weekly_price >= '500'::numeric) AND (weekly_price <= '1000'::numeric) AND (beds >= 4) AND (beds <= 6))
+                     ->  Index Only Scan using host_pkey on host  (cost=0.28..2.67 rows=1 width=4) (actual time=0.002..0.002 rows=1 loops=35)
+                           Index Cond: (id = listing.host_id)
+                           Heap Fetches: 0
+ Planning time: 0.341 ms
+ Execution time: 0.397 ms
+ ------------------------------------------------------------------------------------------------------------------------------------------
+/* Query 6: w/out index: 8.698 ms, w/index: 0.397 ms */
+-------------------------------------------------------------------------------------------------------------------------------------------
+/*this index will make the execution better because the where statment searches for listings with some requirement 
+so basiclly using index the specific listings will be found faster*/
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+QUERY 7
+EXPLAIN ANALYZE
+select neighbourhood_cleansed,  neighborhood, country, max(weekly_price) as max_wekkly_price, min(weekly_price) as  min_wekkly_price 
+from listing
+where property_type = 'House' and review_scores_location = '10' and bed_type = 'Real Bed' and  neighborhood is not null
+group by neighbourhood_cleansed, country, neighborhood
+having max( weekly_price) >2000
+order by max(weekly_price)desc ;
+
+
+BEFORE ADDING INDEX
+--------------------------------------------------------------------------------------------------------------------------
+  Sort  (cost=10000002369.60..10000002369.65 rows=21 width=94) (actual time=13.090..13.097 rows=37 loops=1)
+   Sort Key: (max(weekly_price)) DESC
+   Sort Method: quicksort  Memory: 27kB
+   ->  GroupAggregate  (cost=10000002368.56..10000002369.14 rows=21 width=94) (actual time=11.866..13.050 rows=37 loops=1)
+         Group Key: neighbourhood_cleansed, country, neighborhood
+         Filter: (max(weekly_price) > '2000'::numeric)
+         Rows Removed by Filter: 58
+         ->  Sort  (cost=10000002368.56..10000002368.62 rows=21 width=35) (actual time=11.846..12.244 rows=1881 loops=1)
+               Sort Key: neighbourhood_cleansed, country, neighborhood
+               Sort Method: quicksort  Memory: 196kB
+               ->  Seq Scan on listing  (cost=10000000000.00..10000002368.10 rows=21 width=35) (actual time=0.012..10.367 rows=1881 loops=1)
+                     Filter: ((neighborhood IS NOT NULL) AND ((property_type)::text = 'House'::text) AND (review_scores_location = '10'::numeric) AND ((bed_type)::text = 'Real Bed'::text))
+                     Rows Removed by Filter: 7782
+ Planning time: 0.151 ms
+ Execution time: 13.138 ms
+ --------------------------------------------------------------------------------------------------------------------------
+
+ AFTER ADDING INDEX
+ -------------------------------------------------------------------------------------------------------------------------------------------
+ Sort  (cost=84.43..84.48 rows=21 width=94) (actual time=5.921..5.928 rows=37 loops=1)
+   Sort Key: (max(weekly_price)) DESC
+   Sort Method: quicksort  Memory: 27kB
+   ->  GroupAggregate  (cost=83.39..83.97 rows=21 width=94) (actual time=4.735..5.891 rows=37 loops=1)
+         Group Key: neighbourhood_cleansed, country, neighborhood
+         Filter: (max(weekly_price) > '2000'::numeric)
+         Rows Removed by Filter: 58
+         ->  Sort  (cost=83.39..83.45 rows=21 width=35) (actual time=4.716..5.097 rows=1881 loops=1)
+               Sort Key: neighbourhood_cleansed, country, neighborhood
+               Sort Method: quicksort  Memory: 196kB
+               ->  Index Scan using listing_score_bed_neighb_propert_index on listing  (cost=0.29..82.93 rows=21 width=35) (actual time=0.038..3.374 rows=1881 loops=1)
+                     Index Cond: (((property_type)::text = 'House'::text) AND (review_scores_location = '10'::numeric) AND ((bed_type)::text = 'Real Bed'::text) AND (neighborhood IS NOT NULL))
+ Planning time: 0.168 ms
+ Execution time: 5.977 ms
+ -------------------------------------------------------------------------------------------------------------------------------------------
+/* Query 7: w/out index: 13.138 ms, w/index: 5.977 ms */
+--------------------------------------------------------------------------------------------------------------------------------------------
+/*all fields combined give a way better execution time, they are in where clauses so we want to make the searching faster*/
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+QUERY 8
+EXPLAIN ANALYZE
+select listing.id, temp.avg_price, listing.picture_url, listing.house_rules from listing,
+(select listing_id,ROUND(avg(price),2) as avg_price  from calendar
+    where price is not null
+group by listing_id) as temp
+where listing.id = temp.listing_id  order by temp.avg_price;
+
+
+BEFORE ADDING INDEX
+--------------------------------------------------------------------------------------------------------------------------
+  Sort  (cost=164175.58..164199.76 rows=9670 width=199) (actual time=1686.190..1688.062 rows=7717 loops=1)
+   Sort Key: (round(avg(calendar.price), 2))
+   Sort Method: quicksort  Memory: 2564kB
+   ->  Merge Join  (cost=1000.74..163535.46 rows=9670 width=199) (actual time=10.154..1678.292 rows=7717 loops=1)
+         Merge Cond: (listing.id = calendar.listing_id)
+         ->  Index Scan using idx on listing  (cost=0.29..9048.39 rows=9663 width=167) (actual time=0.031..109.017 rows=9663 loops=1)
+         ->  Finalize GroupAggregate  (cost=1000.45..154245.34 rows=9670 width=36) (actual time=10.120..1562.140 rows=7717 loops=1)
+               Group Key: calendar.listing_id
+               ->  Gather Merge  (cost=1000.45..153955.24 rows=19340 width=36) (actual time=10.006..1547.293 rows=8172 loops=1)
+                     Workers Planned: 2
+                     Workers Launched: 2
+                     ->  Partial GroupAggregate  (cost=0.43..150722.90 rows=9670 width=36) (actual time=0.179..1175.157 rows=2724 loops=3)
+                           Group Key: calendar.listing_id
+                           ->  Parallel Index Scan using calendar_pkey on calendar  (cost=0.43..147226.94 rows=675016 width=9) (actual time=0.020..843.625 rows=539099 loops=3)
+                                 Filter: (price IS NOT NULL)
+                                 Rows Removed by Filter: 636566
+ Planning time: 0.191 ms
+ Execution time: 1689.697 ms
+ --------------------------------------------------------------------------------------------------------------------------
+
+ AFTER ADDING INDEX
+ -------------------------------------------------------------------------------------------------------------------------------------------
+ Sort  (cost=60512.78..60536.95 rows=9670 width=199) (actual time=1137.993..1139.805 rows=7717 loops=1)
+   Sort Key: temp.avg_price
+   Sort Method: quicksort  Memory: 2564kB
+   ->  Hash Join  (cost=50799.17..59872.66 rows=9670 width=199) (actual time=1113.212..1131.347 rows=7717 loops=1)
+         Hash Cond: (listing.id = temp.listing_id)
+         ->  Index Scan using idx on listing  (cost=0.29..9048.39 rows=9663 width=167) (actual time=0.018..13.105 rows=9663 loops=1)
+         ->  Hash  (cost=50678.01..50678.01 rows=9670 width=36) (actual time=1113.172..1113.172 rows=7717 loops=1)
+               Buckets: 16384  Batches: 1  Memory Usage: 460kB
+               ->  Subquery Scan on temp  (cost=50436.26..50678.01 rows=9670 width=36) (actual time=1100.310..1110.571 rows=7717 loops=1)
+                     ->  Finalize HashAggregate  (cost=50436.26..50581.31 rows=9670 width=36) (actual time=1100.309..1107.363 rows=7717 loops=1)
+                           Group Key: calendar.listing_id
+                           ->  Gather  (cost=48236.34..50291.21 rows=19340 width=36) (actual time=1065.569..1081.579 rows=15342 loops=1)
+                                 Workers Planned: 2
+                                 Workers Launched: 2
+                                 ->  Partial HashAggregate  (cost=47236.34..47357.21 rows=9670 width=36) (actual time=1058.715..1066.029 rows=5114 loops=3)
+                                       Group Key: calendar.listing_id
+                                       ->  Parallel Index Only Scan using calendar_price_listingid_index on calendar  (cost=0.43..43861.20 rows=675028 width=9) (actual time=0.018..440.928 rows=539099 loops=3)
+                                             Index Cond: (price IS NOT NULL)
+                                             Heap Fetches: 0
+ Planning time: 0.195 ms
+ Execution time: 1141.372 ms
+ ------------------------------------------------------------------------------------------------------------------------------------------
+/* Query 8: w/out index: 1689.697 ms, w/index: 1141.372 ms */
+-------------------------------------------------------------------------------------------------------------------------------------------
+/*in the querie price fields from calendar is going to be searched on condition and is not primary key so we need to add index
+and by adding one we make the querie much faster*/
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
