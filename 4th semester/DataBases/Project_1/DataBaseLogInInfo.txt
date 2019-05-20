@@ -1,0 +1,7 @@
+ΤΖΕΝΗ ΜΠΟΛΕΝΑ 3170117
+ΚΩΝΣΤΑΝΤΙΝΟΣ ΝΙΚΟΛΟΥΤΣΟΣ 3170122
+endpoint: mydbinstance.xxxxxxxxxxx1.us-east-1.rds.amazonaws.com
+UserName: examiner
+Password: ********
+Database : Airbnb
+
