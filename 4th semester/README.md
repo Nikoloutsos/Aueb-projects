@@ -2,7 +2,7 @@
 > ###### :octocat: This repository contains all of my projects from university ([Aueb](https://www.aueb.gr/)) .
 
 
-After 10 months of learning android, I got my first job at myconstructor.gr
+After 10 months of learning android, I got my first job at [myconstructor](https://myconstructor.gr/)
 I am really proud and I believe I have learned a myriad of new concepts during this period.
 The truth is that I still have to learn a lot..
 Getting your first job gives you a boost of energy and reassure you that you are on the right path for becoming a proffesional android developer.
