@@ -9,7 +9,7 @@ In this subject I learned some basics algorithms. I am not really sure where I c
 | Merge sort | Dijkstra  |
 | Quick sort |  Bellman ford   |
 | 3-way Quick sort  |  Prim|
-| topological sorting  | Kruskal  |
+| Topological sorting  | Kruskal  |
 | | BFS  |
 | | DFS  |
 | | Edmon's max flow  |
