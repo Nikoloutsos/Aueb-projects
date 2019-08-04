@@ -2,7 +2,7 @@
 > ###### :octocat: This repository contains all university projects  ([Aueb](https://www.aueb.gr/)) .
 
 ## Are you wondering what is this repo? :question:
-It's nothing more than all of my code/projects. (2017-2021)
+It's nothing more than all of the code/projects I've worked on. (2017-2021)
 
 ## What's the purpose of this repository? :question:
 I am doing this just because when I finish uni I want to see what I did learn from university and if it was useful.
