@@ -1,0 +1,426 @@
+{
+  "found_solution": "true",
+  "group0": {
+    "Δευτέρα": {
+      "1 ώρα": "( Tigiri ,Foreign Language )",
+      "2 ώρα": "( Blaxou ,Music )",
+      "3 ώρα": "( Xatziara ,History )",
+      "4 ώρα": "( Ntova ,Geography )",
+      "5 ώρα": "( Mixou ,2nd Foreign Language )",
+      "6 ώρα": "( Flori ,Mathematics )",
+      "7 ώρα": "( Niarxou ,Ancient )"
+    },
+    "Τρίτη": {
+      "1 ώρα": "( Ntova ,Household Economics )",
+      "2 ώρα": "( Tigiri ,Foreign Language )",
+      "3 ώρα": "( Mparakari ,History )",
+      "4 ώρα": "( Kouka ,Biology )",
+      "5 ώρα": "( Ganogianni ,Theology )",
+      "6 ώρα": "( Pomoni ,Ancient )",
+      "7 ώρα": "( Xenos ,Geography )"
+    },
+    "Τετάρτη": {
+      "1 ώρα": "( Xatziara ,Literature )",
+      "2 ώρα": "( Kouka ,Biology )",
+      "3 ώρα": "( Oikonomou ,Art )",
+      "4 ώρα": "( Georga ,Project )",
+      "5 ώρα": "( Zaxogiorgos ,Mathematics )",
+      "6 ώρα": "( Ntova ,Household Economics )",
+      "7 ώρα": "κενό"
+    },
+    "Πέμπτη": {
+      "1 ώρα": "( Mixou ,2nd Foreign Language )",
+      "2 ώρα": "( Flori ,Mathematics )",
+      "3 ώρα": "( Niarxou ,Literature )",
+      "4 ώρα": "( Xronopoulou ,Ancient )",
+      "5 ώρα": "( Poulos ,Gymnastics )",
+      "6 ώρα": "( Niarxou ,Language )",
+      "7 ώρα": "( Pappa ,Technology )"
+    },
+    "Παρασκευή": {
+      "1 ώρα": "( Apostolopoulos ,Computer Science )",
+      "2 ώρα": "( Spyrakopoulou ,Ancient Literature )",
+      "3 ώρα": "( Ganogianni ,Theology )",
+      "4 ώρα": "( Thanasopoulou ,Physics )",
+      "5 ώρα": "( Pomoni ,Language )",
+      "6 ώρα": "( Poulos ,Gymnastics )",
+      "7 ώρα": "( Flori ,Mathematics )"
+    }
+  },
+  "group1": {
+    "Δευτέρα": {
+      "1 ώρα": "( Pomoni ,Language )",
+      "2 ώρα": "( Kouka ,Geography )",
+      "3 ώρα": "κενό",
+      "4 ώρα": "( Tsipidi ,2nd Foreign Language )",
+      "5 ώρα": "( Zaxogiorgos ,Mathematics )",
+      "6 ώρα": "( Mparakari ,History )",
+      "7 ώρα": "( Ganogianni ,Theology )"
+    },
+    "Τρίτη": {
+      "1 ώρα": "( Poulos ,Gymnastics )",
+      "2 ώρα": "( Mpatsouli ,Literature )",
+      "3 ώρα": "( Tigiri ,Foreign Language )",
+      "4 ώρα": "( Tsipidi ,2nd Foreign Language )",
+      "5 ώρα": "( Oikonomou ,Art )",
+      "6 ώρα": "( Kouka ,Biology )",
+      "7 ώρα": "( Zaxogiorgos ,Mathematics )"
+    },
+    "Τετάρτη": {
+      "1 ώρα": "( Apostolopoulos ,Computer Science )",
+      "2 ώρα": "( Zaxogiorgos ,Mathematics )",
+      "3 ώρα": "( Ganogianni ,Theology )",
+      "4 ώρα": "( Pomoni ,Language )",
+      "5 ώρα": "( Spyrakopoulou ,Ancient )",
+      "6 ώρα": "( Tigiri ,Foreign Language )",
+      "7 ώρα": "( Georga ,Household Economics )"
+    },
+    "Πέμπτη": {
+      "1 ώρα": "( Ntova ,Household Economics )",
+      "2 ώρα": "( Mpatsouli ,Ancient )",
+      "3 ώρα": "( Mpatsouli ,Literature )",
+      "4 ώρα": "( Thanasopoulou ,Physics )",
+      "5 ώρα": "( Niarxou ,Ancient Literature )",
+      "6 ώρα": "( Kouka ,Biology )",
+      "7 ώρα": "( Zaxogiorgos ,Mathematics )"
+    },
+    "Παρασκευή": {
+      "1 ώρα": "( Ntova ,Geography )",
+      "2 ώρα": "( Xatziara ,History )",
+      "3 ώρα": "( Georga ,Project )",
+      "4 ώρα": "( Spyrakopoulou ,Ancient )",
+      "5 ώρα": "( Blaxou ,Music )",
+      "6 ώρα": "( Basilakos ,Gymnastics )",
+      "7 ώρα": "( Pappa ,Technology )"
+    }
+  },
+  "group2": {
+    "Δευτέρα": {
+      "1 ώρα": "( Niarxou ,Language )",
+      "2 ώρα": "( Mparakari ,History )",
+      "3 ώρα": "( Ganogianni ,Theology )",
+      "4 ώρα": "( Tigiri ,Foreign Language )",
+      "5 ώρα": "( Flori ,Mathematics )",
+      "6 ώρα": "( Apostolopoulos ,Computer Science )",
+      "7 ώρα": "( Georga ,Household Economics )"
+    },
+    "Τρίτη": {
+      "1 ώρα": "( Pomoni ,Literature )",
+      "2 ώρα": "( Zaxogiorgos ,Mathematics )",
+      "3 ώρα": "( Xatziara ,History )",
+      "4 ώρα": "( Pappa ,Technology )",
+      "5 ώρα": "( Ntova ,Household Economics )",
+      "6 ώρα": "( Basilakos ,Gymnastics )",
+      "7 ώρα": "( Niarxou ,Ancient Literature )"
+    },
+    "Τετάρτη": {
+      "1 ώρα": "( Blaxou ,Music )",
+      "2 ώρα": "( Labropoulou ,Physics )",
+      "3 ώρα": "( Niarxou ,Language )",
+      "4 ώρα": "( Kouka ,Biology )",
+      "5 ώρα": "( Mpatsouli ,Ancient )",
+      "6 ώρα": "( Xenos ,Geography )",
+      "7 ώρα": "( Tsipidi ,2nd Foreign Language )"
+    },
+    "Πέμπτη": {
+      "1 ώρα": "( Xatziara ,Literature )",
+      "2 ώρα": "( Poulos ,Gymnastics )",
+      "3 ώρα": "( Flori ,Mathematics )",
+      "4 ώρα": "( Tsipidi ,2nd Foreign Language )",
+      "5 ώρα": "( Ntova ,Geography )",
+      "6 ώρα": "( Pomoni ,Ancient )",
+      "7 ώρα": "( Georga ,Project )"
+    },
+    "Παρασκευή": {
+      "1 ώρα": "( Oikonomou ,Art )",
+      "2 ώρα": "( Flori ,Mathematics )",
+      "3 ώρα": "( Niarxou ,Ancient )",
+      "4 ώρα": "( Kouka ,Biology )",
+      "5 ώρα": "( Tigiri ,Foreign Language )",
+      "6 ώρα": "( Ganogianni ,Theology )",
+      "7 ώρα": "κενό"
+    }
+  },
+  "group3": {
+    "Δευτέρα": {
+      "1 ώρα": "( Spyrakopoulou ,Ancient )",
+      "2 ώρα": "( Poulos ,Gymnastics )",
+      "3 ώρα": "( Xenos ,Chemistry )",
+      "4 ώρα": "( Mparakari ,History )",
+      "5 ώρα": "( Blaxou ,Music )",
+      "6 ώρα": "( Niarxou ,Literature )",
+      "7 ώρα": "( Ntova ,Household Economics )"
+    },
+    "Τρίτη": {
+      "1 ώρα": "( Mixou ,2nd Foreign Language )",
+      "2 ώρα": "( Xenos ,Geography )",
+      "3 ώρα": "( Apostolopoulos ,Computer Science )",
+      "4 ώρα": "( Zaxogiorgos ,Mathematics )",
+      "5 ώρα": "( Tigiri ,Foreign Language )",
+      "6 ώρα": "( Xronopoulou ,Ancient Literature )",
+      "7 ώρα": "κενό"
+    },
+    "Τετάρτη": {
+      "1 ώρα": "( Niarxou ,Ancient Literature )",
+      "2 ώρα": "( Ntova ,Geography )",
+      "3 ώρα": "( Xronopoulou ,Ancient )",
+      "4 ώρα": "( Ganogianni ,Theology )",
+      "5 ώρα": "( Xatziara ,History )",
+      "6 ώρα": "κενό",
+      "7 ώρα": "( Poulos ,Gymnastics )"
+    },
+    "Πέμπτη": {
+      "1 ώρα": "( Zaxogiorgos ,Mathematics )",
+      "2 ώρα": "( Tigiri ,Foreign Language )",
+      "3 ώρα": "( Thanasopoulou ,Physics )",
+      "4 ώρα": "( Pappa ,Technology )",
+      "5 ώρα": "( Ganogianni ,Theology )",
+      "6 ώρα": "( Georga ,Project )",
+      "7 ώρα": "( Pomoni ,Language )"
+    },
+    "Παρασκευή": {
+      "1 ώρα": "( Niarxou ,Language )",
+      "2 ώρα": "( Kouka ,Biology )",
+      "3 ώρα": "( Tsipidi ,2nd Foreign Language )",
+      "4 ώρα": "( Niarxou ,Ancient )",
+      "5 ώρα": "( Oikonomou ,Art )",
+      "6 ώρα": "( Mpatsouli ,Literature )",
+      "7 ώρα": "( Thanasopoulou ,Physics )"
+    }
+  },
+  "group4": {
+    "Δευτέρα": {
+      "1 ώρα": "( Georga ,Household Economics )",
+      "2 ώρα": "( Ganogianni ,Theology )",
+      "3 ώρα": "( Tigiri ,Foreign Language )",
+      "4 ώρα": "( Mpatsouli ,Language )",
+      "5 ώρα": "( Thanasopoulou ,Physics )",
+      "6 ώρα": "( Spyrakopoulou ,Ancient )",
+      "7 ώρα": "( Basilakos ,Gymnastics )"
+    },
+    "Τρίτη": {
+      "1 ώρα": "( Tsipidi ,2nd Foreign Language )",
+      "2 ώρα": "( Kouka ,Biology )",
+      "3 ώρα": "( Xronopoulou ,Ancient Literature )",
+      "4 ώρα": "( Xenos ,Chemistry )",
+      "5 ώρα": "( Xronopoulou ,Ancient )",
+      "6 ώρα": "( Mpatsouli ,Language )",
+      "7 ώρα": "κενό"
+    },
+    "Τετάρτη": {
+      "1 ώρα": "( Georga ,Project )",
+      "2 ώρα": "( Oikonomou ,Art )",
+      "3 ώρα": "( Xatziara ,History )",
+      "4 ώρα": "( Mpatsouli ,Literature )",
+      "5 ώρα": "( Xenos ,Geography )",
+      "6 ώρα": "( Zaxogiorgos ,Mathematics )",
+      "7 ώρα": "( Pappa ,Technology )"
+    },
+    "Πέμπτη": {
+      "1 ώρα": "( Thanasopoulou ,Physics )",
+      "2 ώρα": "( Apostolopoulos ,Computer Science )",
+      "3 ώρα": "( Xronopoulou ,Ancient Literature )",
+      "4 ώρα": "( Tigiri ,Foreign Language )",
+      "5 ώρα": "( Zaxogiorgos ,Mathematics )",
+      "6 ώρα": "( Ganogianni ,Theology )",
+      "7 ώρα": "( Ntova ,Geography )"
+    },
+    "Παρασκευή": {
+      "1 ώρα": "( Blaxou ,Music )",
+      "2 ώρα": "( Poulos ,Gymnastics )",
+      "3 ώρα": "( Mpatsouli ,Ancient )",
+      "4 ώρα": "( Xatziara ,History )",
+      "5 ώρα": "( Tsipidi ,2nd Foreign Language )",
+      "6 ώρα": "( Niarxou ,Literature )",
+      "7 ώρα": "κενό"
+    }
+  },
+  "group5": {
+    "Δευτέρα": {
+      "1 ώρα": "( Mpatsouli ,Literature )",
+      "2 ώρα": "( Pappa ,Technology )",
+      "3 ώρα": "( Xronopoulou ,Ancient Literature )",
+      "4 ώρα": "( Georga ,Project )",
+      "5 ώρα": "( Kouka ,Biology )",
+      "6 ώρα": "( Tigiri ,Foreign Language )",
+      "7 ώρα": "( Spyrakopoulou ,Ancient )"
+    },
+    "Τρίτη": {
+      "1 ώρα": "( Spyrakopoulou ,Ancient )",
+      "2 ώρα": "( Flori ,Mathematics )",
+      "3 ώρα": "( Labropoulou ,Physics )",
+      "4 ώρα": "( Mixou ,2nd Foreign Language )",
+      "5 ώρα": "( Xatziara ,History )",
+      "6 ώρα": "( Oikonomou ,Art )",
+      "7 ώρα": "κενό"
+    },
+    "Τετάρτη": {
+      "1 ώρα": "( Mpatsouli ,Language )",
+      "2 ώρα": "( Tigiri ,Foreign Language )",
+      "3 ώρα": "( Poulos ,Gymnastics )",
+      "4 ώρα": "( Mixou ,2nd Foreign Language )",
+      "5 ώρα": "( Flori ,Mathematics )",
+      "6 ώρα": "( Niarxou ,Literature )",
+      "7 ώρα": "( Ntova ,Geography )"
+    },
+    "Πέμπτη": {
+      "1 ώρα": "( Ganogianni ,Theology )",
+      "2 ώρα": "( Xenos ,Physics )",
+      "3 ώρα": "( Apostolopoulos ,Computer Science )",
+      "4 ώρα": "( Mparakari ,History )",
+      "5 ώρα": "( Blaxou ,Music )",
+      "6 ώρα": "( Spyrakopoulou ,Ancient )",
+      "7 ώρα": "κενό"
+    },
+    "Παρασκευή": {
+      "1 ώρα": "( Poulos ,Gymnastics )",
+      "2 ώρα": "( Ganogianni ,Theology )",
+      "3 ώρα": "( Xronopoulou ,Ancient Literature )",
+      "4 ώρα": "( Pomoni ,Language )",
+      "5 ώρα": "( Ntova ,Household Economics )",
+      "6 ώρα": "( Thanasopoulou ,Chemistry )",
+      "7 ώρα": "( Ntova ,Geography )"
+    }
+  },
+  "group6": {
+    "Δευτέρα": {
+      "1 ώρα": "( Pappa ,Technology )",
+      "2 ώρα": "( Thanasopoulou ,Physics )",
+      "3 ώρα": "( Oikonomou ,Art )",
+      "4 ώρα": "( Spyrakopoulou ,Ancient )",
+      "5 ώρα": "( Pomoni ,Language )",
+      "6 ώρα": "( Georga ,Social Education )",
+      "7 ώρα": "( Poulos ,Gymnastics )"
+    },
+    "Τρίτη": {
+      "1 ώρα": "( Xatziara ,Literature )",
+      "2 ώρα": "( Pomoni ,Ancient Literature )",
+      "3 ώρα": "( Ganogianni ,Theology )",
+      "4 ώρα": "( Georga ,Project )",
+      "5 ώρα": "( Tsipidi ,2nd Foreign Language )",
+      "6 ώρα": "( Blaxou ,Music )",
+      "7 ώρα": "( Flori ,Mathematics )"
+    },
+    "Τετάρτη": {
+      "1 ώρα": "( Xronopoulou ,Ancient )",
+      "2 ώρα": "( Flori ,Mathematics )",
+      "3 ώρα": "( Apostolopoulos ,Computer Science )",
+      "4 ώρα": "( Tigiri ,Foreign Language )",
+      "5 ώρα": "( Mparakari ,History )",
+      "6 ώρα": "( Poulos ,Gymnastics )",
+      "7 ώρα": "( Pomoni ,Literature )"
+    },
+    "Πέμπτη": {
+      "1 ώρα": "( Georga ,Social Education )",
+      "2 ώρα": "( Niarxou ,Language )",
+      "3 ώρα": "( Ganogianni ,Theology )",
+      "4 ώρα": "( Zaxogiorgos ,Mathematics )",
+      "5 ώρα": "( Tigiri ,Foreign Language )",
+      "6 ώρα": "( Mpatsouli ,Ancient Literature )",
+      "7 ώρα": "( Spyrakopoulou ,Ancient )"
+    },
+    "Παρασκευή": {
+      "1 ώρα": "( Tsipidi ,2nd Foreign Language )",
+      "2 ώρα": "( Georga ,Project )",
+      "3 ώρα": "( Xenos ,Chemistry )",
+      "4 ώρα": "( Zaxogiorgos ,Mathematics )",
+      "5 ώρα": "( Mparakari ,History )",
+      "6 ώρα": "( Kouka ,Biology )",
+      "7 ώρα": "κενό"
+    }
+  },
+  "group7": {
+    "Δευτέρα": {
+      "1 ώρα": "( Apostolopoulos ,Computer Science )",
+      "2 ώρα": "( Mixou ,2nd Foreign Language )",
+      "3 ώρα": "( Flori ,Mathematics )",
+      "4 ώρα": "( Xronopoulou ,Ancient Literature )",
+      "5 ώρα": "( Mpatsouli ,Literature )",
+      "6 ώρα": "( Kouka ,Biology )",
+      "7 ώρα": "κενό"
+    },
+    "Τρίτη": {
+      "1 ώρα": "( Pappa ,Technology )",
+      "2 ώρα": "( Georga ,Project )",
+      "3 ώρα": "( Niarxou ,Ancient )",
+      "4 ώρα": "( Poulos ,Gymnastics )",
+      "5 ώρα": "( Zaxogiorgos ,Mathematics )",
+      "6 ώρα": "( Tigiri ,Foreign Language )",
+      "7 ώρα": "( Blaxou ,Music )"
+    },
+    "Τετάρτη": {
+      "1 ώρα": "( Pomoni ,Ancient Literature )",
+      "2 ώρα": "( Mixou ,2nd Foreign Language )",
+      "3 ώρα": "( Flori ,Mathematics )",
+      "4 ώρα": "( Mparakari ,History )",
+      "5 ώρα": "( Pomoni ,Language )",
+      "6 ώρα": "( Georga ,Social Education )",
+      "7 ώρα": "( Ganogianni ,Theology )"
+    },
+    "Πέμπτη": {
+      "1 ώρα": "( Pomoni ,Language )",
+      "2 ώρα": "( Georga ,Project )",
+      "3 ώρα": "( Xenos ,Physics )",
+      "4 ώρα": "( Spyrakopoulou ,Ancient )",
+      "5 ώρα": "( Oikonomou ,Art )",
+      "6 ώρα": "( Poulos ,Gymnastics )",
+      "7 ώρα": "( Xenos ,Chemistry )"
+    },
+    "Παρασκευή": {
+      "1 ώρα": "( Mparakari ,History )",
+      "2 ώρα": "( Tigiri ,Foreign Language )",
+      "3 ώρα": "( Flori ,Mathematics )",
+      "4 ώρα": "( Xronopoulou ,Ancient )",
+      "5 ώρα": "( Mpatsouli ,Literature )",
+      "6 ώρα": "( Georga ,Social Education )",
+      "7 ώρα": "( Ganogianni ,Theology )"
+    }
+  },
+  "group8": {
+    "Δευτέρα": {
+      "1 ώρα": "( Xatziara ,History )",
+      "2 ώρα": "( Zaxogiorgos ,Mathematics )",
+      "3 ώρα": "( Georga ,Social Education )",
+      "4 ώρα": "( Pomoni ,Ancient Literature )",
+      "5 ώρα": "( Xenos ,Physics )",
+      "6 ώρα": "( Ganogianni ,Theology )",
+      "7 ώρα": "κενό"
+    },
+    "Τρίτη": {
+      "1 ώρα": "( Kouka ,Biology )",
+      "2 ώρα": "( Ganogianni ,Theology )",
+      "3 ώρα": "( Thanasopoulou ,Chemistry )",
+      "4 ώρα": "( Flori ,Mathematics )",
+      "5 ώρα": "( Niarxou ,Language )",
+      "6 ώρα": "( Apostolopoulos ,Computer Science )",
+      "7 ώρα": "( Spyrakopoulou ,Ancient )"
+    },
+    "Τετάρτη": {
+      "1 ώρα": "( Zaxogiorgos ,Mathematics )",
+      "2 ώρα": "( Georga ,Project )",
+      "3 ώρα": "( Basilakos ,Gymnastics )",
+      "4 ώρα": "( Pappa ,Technology )",
+      "5 ώρα": "( Niarxou ,Language )",
+      "6 ώρα": "( Spyrakopoulou ,Ancient )",
+      "7 ώρα": "( Xatziara ,Literature )"
+    },
+    "Πέμπτη": {
+      "1 ώρα": "( Oikonomou ,Art )",
+      "2 ώρα": "( Basilakos ,Gymnastics )",
+      "3 ώρα": "( Blaxou ,Music )",
+      "4 ώρα": "( Georga ,Social Education )",
+      "5 ώρα": "( Tsipidi ,2nd Foreign Language )",
+      "6 ώρα": "( Xronopoulou ,Ancient Literature )",
+      "7 ώρα": "( Tigiri ,Foreign Language )"
+    },
+    "Παρασκευή": {
+      "1 ώρα": "( Xronopoulou ,Ancient )",
+      "2 ώρα": "( Mixou ,2nd Foreign Language )",
+      "3 ώρα": "( Tigiri ,Foreign Language )",
+      "4 ώρα": "( Mparakari ,History )",
+      "5 ώρα": "( Zaxogiorgos ,Mathematics )",
+      "6 ώρα": "( Xatziara ,Literature )",
+      "7 ώρα": "( Georga ,Project )"
+    }
+  }
+}

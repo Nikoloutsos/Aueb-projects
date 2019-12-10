@@ -1,0 +1,352 @@
+{
+    "lessons" : [
+        {
+            "id" : 0,
+            "title" : "Language",
+            "class" : "A",
+            "hours" : 2
+        },
+        {
+            "id" : 1,
+            "title" : "Language",
+            "class" : "B",
+            "hours" : 2
+        },
+        {
+            "id" : 2,
+            "title" : "Language",
+            "class" : "C",
+            "hours" :2
+        },
+        {
+            "id" : 3,
+            "title" : "Literature",
+            "class" : "A",
+            "hours" : 2
+        },
+        {
+            "id" : 4,
+            "title" : "Literature",
+            "class" : "B",
+            "hours" : 2
+        },
+        {
+            "id" : 5,
+            "title" : "Literature",
+            "class" : "C",
+            "hours" : 2
+        },
+        {
+            "id" : 6,
+            "title" : "Ancient",
+            "class" : "A",
+            "hours" : 3
+        },
+        {
+            "id" : 7,
+            "title" : "Ancient",
+            "class" : "B",
+            "hours" : 3
+        },
+        {
+            "id" : 8,
+            "title" : "Ancient",
+            "class" : "C",
+            "hours" : 3
+        },
+        {
+            "id" : 9,
+            "title" : "Ancient Literature",
+            "class" : "A",
+            "hours" : 1
+        },
+        {
+            "id" : 10,
+            "title" : "Ancient Literature",
+            "class" : "B",
+            "hours" : 2
+        },
+        {
+            "id" : 11,
+            "title" : "Ancient Literature",
+            "class" : "C",
+            "hours" : 2
+        },
+        {
+            "id" : 12,
+            "title" : "Mathematics",
+            "class" : "A",
+            "hours" : 4
+        },
+        {
+            "id" : 13,
+            "title" : "Mathematics",
+            "class" : "B",
+            "hours" : 2
+        },
+        {
+            "id" : 14,
+            "title" : "Mathematics",
+            "class" : "C",
+            "hours" : 4
+        },
+        {
+            "id" : 15,
+            "title" : "Physics",
+            "class" : "A",
+            "hours" : 1
+        },
+        {
+            "id" : 16,
+            "title" : "Physics",
+            "class" : "B",
+            "hours" : 2
+        },
+        {
+            "id" : 17,
+            "title" : "Physics",
+            "class" : "C",
+            "hours" : 1
+        },
+        {
+            "id" : 18,
+            "title" : "Chemistry",
+            "class" : "B",
+            "hours" : 1
+        },
+        {
+            "id" : 19,
+            "title" : "Chemistry",
+            "class" : "C",
+            "hours" : 1
+        },
+        {
+            "id" : 20,
+            "title" : "Biology",
+            "class" : "A",
+            "hours" : 2
+        },
+        {
+            "id" : 21,
+            "title" : "Biology",
+            "class" : "B",
+            "hours" : 1
+        },
+        {
+            "id" : 22,
+            "title" : "Biology",
+            "class" : "C",
+            "hours" : 1
+        },
+        {
+            "id" : 23,
+            "title" : "Geography",
+            "class" : "A",
+            "hours" : 2
+        },
+        {
+            "id" : 24,
+            "title" : "Geography",
+            "class" : "B",
+            "hours" : 2
+        },
+        {
+            "id" : 25,
+            "title" : "History",
+            "class" : "A",
+            "hours" : 2
+        },
+        {
+            "id" : 26,
+            "title" : "History",
+            "class" : "B",
+            "hours" : 2
+        },
+        {
+            "id" : 27,
+            "title" : "History",
+            "class" : "C",
+            "hours" : 2
+        },
+        {
+            "id" : 28,
+            "title" : "Social Education",
+            "class" : "C",
+            "hours" : 2
+        },
+        {
+            "id" : 29,
+            "title" : "Theology",
+            "class" : "A",
+            "hours" : 2
+        },
+        {
+            "id" : 30,
+            "title" : "Theology",
+            "class" : "B",
+            "hours" : 2
+        },
+        {
+            "id" : 31,
+            "title" : "Theology",
+            "class" : "C",
+            "hours" : 2
+        },
+        {
+            "id" : 32,
+            "title" : "Foreign Language",
+            "class" : "A",
+            "hours" : 2
+        },
+        {
+            "id" : 33,
+            "title" : "Foreign Language",
+            "class" : "B",
+            "hours" : 2
+        },
+        {
+            "id" : 34,
+            "title" : "Foreign Language",
+            "class" : "C",
+            "hours" : 2
+        },
+        {
+            "id" : 35,
+            "title" : "2nd Foreign Language",
+            "class" : "A",
+            "hours" : 2
+        },
+        {
+            "id" : 36,
+            "title" : "2nd Foreign Language",
+            "class" : "B",
+            "hours" : 2
+        },
+        {
+            "id" : 37,
+            "title" : "2nd Foreign Language",
+            "class" : "C",
+            "hours" : 2
+        },
+        {
+            "id" : 38,
+            "title" : "Technology",
+            "class" : "A",
+            "hours" : 1
+        },
+        {
+            "id" : 39,
+            "title" : "Technology",
+            "class" : "B",
+            "hours" : 1
+        },
+        {
+            "id" : 40,
+            "title" : "Technology",
+            "class" : "C",
+            "hours" : 1
+        },
+        {
+            "id" : 41,
+            "title" : "Computer Science",
+            "class" : "A",
+            "hours" : 1
+        },
+        {
+            "id" : 42,
+            "title" : "Computer Science",
+            "class" : "B",
+            "hours" : 1
+        },
+        {
+            "id" : 43,
+            "title" : "Computer Science",
+            "class" : "C",
+            "hours" : 1
+        },
+        {
+            "id" : 44,
+            "title" : "Music",
+            "class" : "A",
+            "hours" : 1
+        },
+        {
+            "id" : 45,
+            "title" : "Music",
+            "class" : "B",
+            "hours" : 1
+        },
+        {
+            "id" : 46,
+            "title" : "Music",
+            "class" : "C",
+            "hours" : 1
+        },
+        {
+            "id" : 47,
+            "title" : "Art",
+            "class" : "A",
+            "hours" : 1
+        },
+        {
+            "id" : 48,
+            "title" : "Art",
+            "class" : "B",
+            "hours" : 1
+        },
+        {
+            "id" : 49,
+            "title" : "Art",
+            "class" : "C",
+            "hours" : 1
+        },
+        {
+            "id" : 50,
+            "title" : "Gymnastics",
+            "class" : "A",
+            "hours" : 2
+        },
+        {
+            "id" : 51,
+            "title" : "Gymnastics",
+            "class" : "B",
+            "hours" : 2
+        },
+        {
+            "id" : 52,
+            "title" : "Gymnastics",
+            "class" : "C",
+            "hours" : 2
+        },
+        {
+            "id" : 53,
+            "title" : "Household Economics",
+            "class" : "A",
+            "hours" : 2
+        },
+        {
+            "id" : 54,
+            "title" : "Household Economics",
+            "class" : "B",
+            "hours" : 1
+        },
+        {
+            "id" : 55,
+            "title" : "Project",
+            "class" : "A",
+            "hours" : 1
+        },
+        {
+            "id" : 56,
+            "title" : "Project",
+            "class" : "B",
+            "hours" : 1
+        },
+        {
+            "id" : 57,
+            "title" : "Project",
+            "class" : "C",
+            "hours" : 2
+        }
+    ]
+}

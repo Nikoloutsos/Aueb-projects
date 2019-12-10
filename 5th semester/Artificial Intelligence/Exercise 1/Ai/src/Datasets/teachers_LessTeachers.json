@@ -1,0 +1,179 @@
+{
+    "teachers" : [
+        {
+            "teacher_id" : 0,
+            "teacher_name" : "Zaxogiorgos",
+            "lessons_teached" : [12, 13, 14],
+            "hours_daily" : 4,
+            "hours_weekly" : 20
+        },
+        {
+            "teacher_id" : 1,
+            "teacher_name" : "Ntova",
+            "lessons_teached" : [23, 24, 53, 54],
+            "hours_daily" : 5,
+            "hours_weekly" : 20
+        },
+        {
+            "teacher_id" : 2,
+            "teacher_name" : "Mpatsouli",
+            "lessons_teached" : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+            "hours_daily" : 6,
+            "hours_weekly" : 24
+        },
+        {
+            "teacher_id" : 3,
+            "teacher_name" : "Xronopoulou",
+            "lessons_teached" : [6, 7, 8, 9, 10, 11],
+            "hours_daily" : 4,
+            "hours_weekly" : 20
+        },
+        {
+            "teacher_id" : 4,
+            "teacher_name" : "Pappa",
+            "lessons_teached" : [38, 39, 40],
+            "hours_daily" : 2,
+            "hours_weekly" : 12
+        },
+        {
+            "teacher_id" : 5,
+            "teacher_name" : "Apostolopoulos",
+            "lessons_teached" : [41, 42, 43],
+            "hours_daily" : 2,
+            "hours_weekly" : 12
+        },
+        {
+            "teacher_id" : 6,
+            "teacher_name" : "Tigiri",
+            "lessons_teached" : [32, 33, 34],
+            "hours_daily" : 4,
+            "hours_weekly" : 20
+        },
+        {
+            "teacher_id" : 7,
+            "teacher_name" : "Ganogianni",
+            "lessons_teached" : [29, 30, 31],
+            "hours_daily" : 4,
+            "hours_weekly" : 20
+        },
+        {
+            "teacher_id" : 8,
+            "teacher_name" : "Spyrakopoulou",
+            "lessons_teached" : [6, 7, 8, 9, 10, 11],
+            "hours_daily" : 5,
+            "hours_weekly" : 25
+        },
+        {
+            "teacher_id" : 9,
+            "teacher_name" : "Blaxou",
+            "lessons_teached" : [44, 45, 46],
+            "hours_daily" : 2,
+            "hours_weekly" : 12
+        },
+        {
+            "teacher_id" : 10,
+            "teacher_name" : "Kouka",
+            "lessons_teached" : [20, 21, 22, 23, 24],
+            "hours_daily" : 5,
+            "hours_weekly" : 25
+        },
+        {
+            "teacher_id" : 11,
+            "teacher_name" : "Poulos",
+            "lessons_teached" : [50, 51, 52],
+            "hours_daily" : 3,
+            "hours_weekly" : 15
+        },
+        {
+            "teacher_id" : 12,
+            "teacher_name" : "Labropoulou",
+            "lessons_teached" : [15, 16, 17],
+            "hours_daily" : 6,
+            "hours_weekly" : 28
+        },
+        {
+            "teacher_id" : 13,
+            "teacher_name" : "Georga",
+            "lessons_teached" : [28, 53, 54, 55, 56, 57],
+            "hours_daily" : 6,
+            "hours_weekly" : 28
+        },
+        {
+            "teacher_id" : 14,
+            "teacher_name" : "Oikonomou",
+            "lessons_teached" : [47, 48, 49],
+            "hours_daily" : 4,
+            "hours_weekly" : 20
+        },
+        {
+            "teacher_id" : 15,
+            "teacher_name" : "Mixou",
+            "lessons_teached" : [35, 36, 37],
+            "hours_daily" : 4,
+            "hours_weekly" : 20
+        },
+        {
+            "teacher_id" : 16,
+            "teacher_name" : "Basilakos",
+            "lessons_teached" : [50, 51, 52],
+            "hours_daily" : 1,
+            "hours_weekly" : 5
+        },
+        {
+            "teacher_id" : 17,
+            "teacher_name" : "Xenos",
+            "lessons_teached" : [15, 16, 17, 18, 19, 23, 24],
+            "hours_daily" : 5,
+            "hours_weekly" : 25
+        },
+        {
+            "teacher_id" : 18,
+            "teacher_name" : "Niarxou",
+            "lessons_teached" : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+            "hours_daily" : 4,
+            "hours_weekly" :20
+        },
+        {
+            "teacher_id" : 19,
+            "teacher_name" : "Tsipidi",
+            "lessons_teached" : [35, 36, 37],
+            "hours_daily" : 4,
+            "hours_weekly" : 20
+        },
+        {
+            "teacher_id" : 20,
+            "teacher_name" : "Pomoni",
+            "lessons_teached" : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+            "hours_daily" : 4,
+            "hours_weekly" : 20
+        },
+        {
+            "teacher_id" : 21,
+            "teacher_name" : "Flori",
+            "lessons_teached" : [12, 13, 14, 41, 42, 43],
+            "hours_daily" : 5,
+            "hours_weekly" : 20
+        },
+        {
+            "teacher_id" : 22,
+            "teacher_name" : "Mparakari",
+            "lessons_teached" : [25, 26, 27],
+            "hours_daily" : 4,
+            "hours_weekly" :20
+        },
+        {
+            "teacher_id" : 23,
+            "teacher_name" : "Xatziara",
+            "lessons_teached" : [3, 4, 5, 25, 26, 27],
+            "hours_daily" : 4,
+            "hours_weekly" : 20
+        },
+        {
+            "teacher_id" : 24,
+            "teacher_name" : "Thanasopoulou",
+            "lessons_teached" : [15, 16, 17, 18, 19],
+            "hours_daily" : 5,
+            "hours_weekly" : 20
+        }
+    ]
+}
