@@ -1,3 +1,9 @@
+
+<p align="center">
+  <img src="https://i.imgur.com/TJikbiA.jpg">
+</p>
+
+
 # High School Timetable Problem using Hill Climbing
 A hill climbing implementation for solving the high school timetable problem. The program generates a random initial state an calculates a rating based on a heuristic function. Each constraint evaluates the state and produces a score. The sum of all equals the rating of the state. Then the program attempts to solve one of these constraints at a time. Each constraint has a specialized way resolving itself if possible to reduce the steps needed for optimizing the solution.
 
