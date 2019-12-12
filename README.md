@@ -19,4 +19,8 @@ Neither contributors nor me are rensponsible if you copy any project and you get
 ## Contributors :sparkles:
 ([Petros Papatheodorou](https://github.com/subamanis))
 
+[Xanthos Xanthopoulos](https://github.com/XanthosXanthopoulos)
+
+[Konstantinos Nikoloutsos](https://github.com/Nikoloutsos)
+
 ([Jenny Bolena](https://github.com/jennybolena))
