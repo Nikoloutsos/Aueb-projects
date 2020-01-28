@@ -2,9 +2,6 @@
 > ###### :octocat: This repository contains all of my projects from university ([Aueb](https://www.aueb.gr/)) .
 
 
-![Image description](https://thealmanac.org/g/029-1200x628-dlxblog-5-free-tools-to-create-your-small-business-marketing-plan-1200x675-template-ideas-action-273x183.png)
-
-
 
 
 This subject helped me improve my skills as a project manager. It didn't contain any type of code.
