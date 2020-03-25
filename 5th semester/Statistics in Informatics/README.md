@@ -18,3 +18,4 @@ Here is a list of what you are going to learn:
 | Confidence level  |
 | Logistic regression  |
 | qq-plot (Figure out when a sample followes normal distribution)  |
+| Learn R basics |
