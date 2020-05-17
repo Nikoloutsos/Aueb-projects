@@ -17,6 +17,9 @@ Not to mention, if you contribute your name will be added in the contributors se
 Neither contributors nor me are rensponsible if you copy any project and you get caught.
 
 ## Contributors :sparkles:
+
+[Jim Filippou](https://github.com/jimfilippou)
+
 [Michael Papapetros](https://github.com/michalispap)
 
 [Panagiotis Koilakos](https://github.com/Svestis)
