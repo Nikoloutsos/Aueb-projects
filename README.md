@@ -3,6 +3,7 @@
 
 ## Are you wondering what is this repo? :question:
 It's nothing more than all of the code/projects I've worked on. (2017-2021)
+Also it contains other colleague's projects.
 
 ## What's the purpose of this repository? :question:
 I am doing this just because when I finish uni I want to see what I did learn from university and if it was useful.
@@ -10,7 +11,7 @@ Apart from that, this repo may be helpful to somebody who starts studying CS at 
 
 ## How and What to contribute :nerd_face:
 As said above, this repository may help students at university of aueb to expand their knowledge by seeing others code.
-You can contrubute by making a pull request in which you are going to write your thoughts/ideas, tools that you used that helped you finish your projects.
+You can contrubute by making a pull request in which you are going to write your thoughts/ideas, tools that you used that helped you finish your projects in addition with the source code.
 Not to mention, if you contribute your name will be added in the contributors section right below.
 
 ## Disclaimer  :warning:
