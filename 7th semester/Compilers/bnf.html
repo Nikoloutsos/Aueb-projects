@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+
+<meta charset="utf-8" />
+<title>BNF for miniPython</title> 
+<style>
+hgroup {
+	display: block;
+	text-align: center;	
+	font-family: sans-serif;
+	letter-spacing: -1px;
+}
+
+h2 {
+	color: silver;
+}
+
+a {
+	color: slategray;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+dl {
+	font: 90%/1.5 Consolas, Monaco, monospace;
+	padding-bottom: 2em;
+	overflow: hidden;
+}
+
+	dt {
+		float: left;
+		width: 9.5em;
+		padding-right: .5em;
+		text-align: right;
+		clear: left;
+	}
+	
+	dt:target {
+		background: gold;
+	}
+	
+		dt > a {
+			color: inherit;
+		}
+	
+	dd {
+		white-space: nowrap;
+		margin: 0;
+	}
+	
+	dt + dd {
+		float: left;
+		clear: right;
+	}
+	
+	dd + dd {
+		margin-left: 10em;
+		clear: both;
+	}
+
+.string {
+	color: #6a0;
+}
+</style>
+
+</head> 
+<body> 
+
+
+<hgroup>
+	<h1>BNF for Minipython</h1> 
+	<h2>NON-TERMINALS</h2> 
+</hgroup>
+
+<dl>  
+	<dt id="Goal">Goal</dt>
+	<dd>::= (<a href="#Function">Function</a>|<a href="#Statement">Statement</a>)* &lt;EOF&gt;</dd>
+
+	<dt id="Function"><a href="#Function">Function</a></dt> 
+	<dd>::= <span class="string">"def"</span> <a href="#Identifier">Identifier</a> 
+			<span class="string">"("</span> <a href="#Argument">Argument</a>? <span class="string">")"</span> <span class="string">":"</span> 
+			<a href="#Statement">Statement</a> 
+	</dd>
+	
+	<dt id="Argument"><a href="#Argument">Argument</a></dt>
+	<dd>::= <a href="#Identifier">Identifier </a> (<span class="string">"="</span> <a href="#Value">Value </a>)?
+			( <span class="string">","</span> <a href="#Identifier">Identifier</a> (<span class="string">"="</span> <a href="#Value">Value </a>)?)* 
+ 
+	</dd>
+	 
+	<dt id="Statement"><a href="#Statement">Statement</a>
+	<dd>::= 
+		 <b>tab*</b> <span class="string">"if"</span> <a href="#Comparison">Comparison</a>  <span class="string">":"</span> 	<a href="#Statement">Statement</a> </dd>
+		 <dd>|<b>tab*</b>  <span class="string">"while"</span> <a href="#Comparison">Comparison</a>  <span class="string">":"</span>  <a href="#Statement">Statement</a></dd>
+	<dd>|<b>tab*</b>  <span class="string">"for"</span> <a href="#Identifier">Identifier</a> <span class="string">"in"</span> <a href="#Identifier">Identifier</a> <span class="string">":"</span> <a href="#Statement">Statement</a></dd>
+	<dd>|<b>tab*</b>  <span class="string">"return"</span> <a href="#Expression">Expression</a> </dd>
+	<dd>|<b>tab*</b>  <span class="string">"print"</span> <a href="#Expression">Expression</a> (<span class="string">","</span> <a href="#Expression">Expression</a>)* </dd>
+	<dd>|<b>tab*</b>  <a href="#Identifier">Identifier</a> ( <span class="string">"="</span> | <span class="string">"-="</span>  | <span class="string">"/="</span> ) <a href="#Expression">Expression</a> </dd>
+	<dd>|<b>tab*</b>  <a href="#Identifier">Identifier</a> <span class="string">"["</span> <a href="#Expression">Expression</a> <span class="string">"]"</span> <span class="string">"="</span> <a href="#Expression">Expression</a> </dd> 
+	<dd>|<b>tab*</b> <span class="string">"assert"</span> <a href="#Expression">Expression</a> (<span class="string">","</span> <a href="#Expression">Expression</a> )? </dd>
+	<dd>|<b>tab*</b>  <a href="#Function-Call">Function Call</a>
+	<dd>|<a href="#Import">Import</a> </dd>
+	
+	
+	<dt id="Expression"><a href="#Expression">Expression</a>
+	<dd>::= <a href="#Expression">Expression</a> ( <span class="string">"+"</span> | <span class="string">"-"</span> | <span class="string">"*"</span> | <span class="string">"/"</span> |  <span class="string">"%"</span> | <span class="string">"**"</span>  ) <a href="#Expression">Expression</a></dd>
+	<dd>| ( <span class="string">"++"</span> | <span class="string">"--"</span> ) <a href="#Expression">Expression</a></dd>
+	<dd>| <a href="#Expression">Expression</a>( <span class="string">"++"</span> | <span class="string">"--"</span> )</dd>
+	<dd>| <a href="#Identifier">Identifier</a> <span class="string">"["</span> <a href="#Expression">Expression</a> <span class="string">"]"</span></dd>
+	<dd>| <a href="#Function-Call">Function Call</a> </dd>
+	<dd>| <a href="#Value">Value </a></dd>
+	<dd>| <a href="#Identifier">Identifier</a></dd>
+	<dd>| <span class="string">"("</span> <a href="#Expression">Expression</a> <span class="string">")"</span></dd> 
+	<dd>| <span class="string">"["</span><a href="#Value">Value </a> ( <span class="string">","</span> <a href="#Value">Value</a>)*<span class="string">"]"</span></dd>
+	
+	<!-- <dt id="Import"><a href="#Import">Import</a></dt> 
+	<dd>::= <span class="string">"import"</span> <a href="#Module">Module</a> (<span class="string">"as"</span> <a href="#Identifier">Identifier</a>)? ( <span class="string">","</span> <a href="#Module">Module</a> (<span class="string">"as"</span> <a href="#Identifier">Identifier</a>)? )*</dd>
+	<dd>| <span class="string">"from"</span> <a href="#Module">Module</a>  <span class="string">"import"</span> <a href="#Identifier">Identifier</a> (<span class="string">"as"</span> <a href="#Identifier">Identifier</a>)? ( <span class="string">","</span> <a href="#Identifier">Identifier</a> (<span class="string">"as"</span> <a href="#Identifier">Identifier</a>)? )*</dd>
+
+	<dt id="Module"><a href="#Module">Module</a></dt> 
+	<dd>::= ( <a href="#Identifier">Identifier</a>  <span class="string">"."</span> ) * <a href="#Identifier">Identifier</a>  -->
+
+	<dt id="Comparison"><a href="#Comparison">Comparison</a></dt>
+	<dd>::= <a href="#Comparison">Comparison</a> ( <span class="string">"and"</span> | <span class="string">"or"</span>) <a href="#Comparison">Comparison</a></dd> 
+	<dd>| <span class="string">"not"</span> <a href="#Comparison">Comparison</a></dd> 
+	<dd>| <a href="#Expression">Expression</a> ( <span class="string">"&gt;"</span> | <span class="string">"&lt;"</span> | <span class="string">"&gt;="</span> | <span class="string">"&lt;="</span> |<span class="string">"!="</span> | <span class="string">"=="</span>) <a href="#Expression">Expression</a></dd>
+	<dd>| <span class="string">"true"</span></dd> 
+	<dd>| <span class="string">"false"</span></dd>
+	
+	<dt id="Function-Call"><a href="#Function-Call">Function Call</a></dt> 
+	<dd>::= <a href="#Identifier">Identifier</a> <span class="string">"("</span> <a href="#Arglist">Arglist</a>? <span class="string">")"</span></dd>
+	
+	<dt id="Arglist"><a href="#Arglist">Arglist</a></dt>
+	 <dd>::=  <a href="#Expression">Expression </a> ( <span class="string">","</span> <a href="#Expression">Expression</a> )* 
+	</dd>
+	 
+	<dt id="Value"><a href="#Value">Value</a></dt>
+	<dd>::=  <a href="#Identifier">Identifier</a> <span class="string">"."</span> <a href="#Function-Call">Function Call</a> | <a href="#Number">Number</a> | "&lt;STRING_LITERAL&gt;"|'&lt;STRING_LITERAL&gt;' |  <span class="string">"None"</span> </dd>
+	 
+	<dt id="Number"><a href="#Number">Number</a></dt> 
+	<dd>::= &lt;INTEGER_LITERAL&gt; </dd>
+	 
+	<dt id="Identifier"><a href="#">Identifier</a></dt>
+	<dd>::= &lt;IDENTIFIER&gt;</dd>
+</dl>
+<p>
+&lt;STRING_LITERAL&gt; = Μία λέξη η οποία περιέχει γράμματα (μικρά και κεφαλαία) και κενά<br/>
+&lt;INTEGER_LITERAL&gt; = Ένας ακέραιος ή δεκαδικός αριθμός<br/>
+&lt;IDENTIFIER&gt; = Ένα όνομα μεταβλήτής
+</p>
+
+
+<p>Σχετικά με την προτεραιότητα των operators, μπορείτε να απευθυνθείτε στον πίνακα που βρίσκεται στον παρακάτω σύνδεσμο: <a href="http://www.mathcs.emory.edu/~valerie/courses/fall10/155/resources/op_precedence.html">http://www.mathcs.emory.edu/~valerie/courses/fall10/155/resources/op_precedence.html</a></p>
+
+</body> 
+</html> 

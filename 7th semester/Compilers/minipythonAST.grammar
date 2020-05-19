@@ -1,0 +1,232 @@
+/*
+*	Γιώργος Παπαδόπουλος 	3160131
+*	Δικαία Σωτηροπούλου 	3160172
+*	Αλέξανδρος Ψαραύτης 	3160196
+*/
+
+Package minipython;
+
+Helpers
+	digit = ['0' .. '9'];
+	letter = ['a' .. 'z']|['A' .. 'Z']; 
+	cr = 13; 
+	lf = 10;
+	all = [0..127];
+	eol = lf | cr | cr lf;
+	not_eol = [all - [cr + lf]];
+
+Tokens
+	tab = 9;
+	plus1 = '++';
+	minus1 = '--';
+	plus = '+';
+	meq = '-=';
+	diveq = '/=';
+	minus = '-';
+	dmult = '**';
+	mult = '*';
+	div = '/';
+	mod = '%';
+	not = 'not';
+	and = 'and';
+	or = 'or';
+	dictt = 'dict';
+	def = 'def';
+	logic_plus = '&&';
+	l_par = '(';
+	r_par = ')';
+	l_br = '[';
+	r_br = ']';
+	dot = '.';
+	comma=',';
+	qmark = '?';
+	gqmark = ';';
+	if = 'if';
+	elif = 'elif';
+	else = 'else';
+	while = 'while';
+	for = 'for';
+	in = 'in';
+	assert = 'assert';
+	print = 'print';
+	return = 'return';
+	null = 'None';
+	gr_eq = '>=';
+	ls_eq = '<=';
+	less = '<';
+	great = '>';
+	equals = '==';
+	nequals = '!=';
+	exclam = '!';
+	eq = '=';
+	true = 'true';
+	semi = ':';
+	false = 'false';
+	quote = '"';
+	s_quote = ''';
+	blank = (' ' | lf | cr);
+	line_comment = '#' not_eol* eol; 
+	number = digit+ | (digit+ '.' digit+);
+	id = letter (letter | digit)*;
+	string = '"'not_eol* '"' | '''not_eol* ''';
+
+Ignored Tokens
+	blank, line_comment;
+	
+Productions
+	programme = commands*{-> New programme( [commands] ) };
+
+	commands = 	{stat} statement {-> New commands.stat( statement ) }|
+				{func}function{-> New commands.func(function) };
+	
+	function = def id l_par argument? r_par semi statement{-> New function(id, argument, statement) };
+
+	single_arg {-> argument} = 	{singlev} id eq value {-> New argument.singlev(id, value)} |
+								{single} id {-> New argument.single(id)};
+	
+	argument {-> argument} = 	{single} single_arg {-> single_arg.argument} |
+								{multi} argument comma single_arg{-> New argument.multi(argument.argument, single_arg.argument)} ;
+
+	statement = {if} tab* if comparison semi statement {-> New statement.if(comparison, statement)} |
+				{while} tab* while comparison semi statement {-> New statement.while(comparison, statement)}|
+				{for} tab* for [v1]:id in [v2]:id semi statement{-> New statement.for(v1, v2, statement)} |
+				{ret} tab* return expression{-> New statement.ret(expression)} |
+				{print}tab* print arglist{-> New statement.print(arglist)} |
+				{assign} tab* id eq expression{-> New statement.assign(id, expression)} |
+				{assignm} tab* id meq expression{-> New statement.assignm(id, expression)} |
+				{assignd} tab* id diveq expression{-> New statement.assignd(id, expression)} |
+				{arr} tab* id l_br [index]:expression r_br eq [item]:expression{-> New statement.arr(id, index, item)} |
+				{error} error{-> New statement.error(error)} |
+				{f_call} tab* function_call{-> New statement.f_call(function_call)};
+
+	error = {single} tab* assert expression {-> New error.single(expression)} |
+			{multi} error comma expression {-> New error.multi(error, expression)} ;
+	
+	function_call = id l_par arglist? r_par {-> New function_call(id, arglist)};
+
+	arglist = 	{single} expression {-> New arglist.single(expression)} |
+				{multi} arglist comma expression{-> New arglist.multi(arglist, expression)} ;
+
+	expression {-> expression} = 	{plusone} plus1 addsub {-> New expression.plusone(addsub.expression)}|
+									{minusone} minus1 addsub {-> New expression.minusone(addsub.expression)}|
+									{oneplus} addsub plus1 {-> New expression.oneplus(addsub.expression)}|
+									{oneminus} addsub minus1 {-> New expression.oneminus(addsub.expression)}|
+									{num_oper} addsub {-> addsub.expression} ;
+
+	addsub {-> expression} = 	{multdiv} multdiv {-> multdiv.expression} |
+								{add} addsub plus multdiv {-> New expression.add(addsub.expression, multdiv.expression)} |
+								{sub} addsub minus multdiv {-> New expression.sub(addsub.expression, multdiv.expression)} ;
+
+	multdiv {-> expression} = 	{pow} pow {-> pow.expression} |
+								{mult} multdiv mult pow {-> New expression.mult(multdiv.expression, pow.expression)} |
+								{div} multdiv div pow {-> New expression.div(multdiv.expression, pow.expression)} |
+								{mod} multdiv mod pow {-> New expression.mod(multdiv.expression, pow.expression)} ;
+	
+	pow {-> expression} = 	{num} numeric {-> numeric.expression} |
+							{pow} pow dmult numeric {-> New expression.pow(pow.expression, numeric.expression)} ;
+
+	numeric {-> expression} = 	{arr} id l_br expression r_br {-> New expression.arr(id, expression)} |
+								{f_call} function_call {-> New expression.f_call(function_call)} |
+								{identifier} id {-> New expression.identifier(id)} |
+								{value} value {-> New expression.value(value)} |
+								{tuple} l_br tuple r_br {-> New expression.tuple(tuple)} |
+								{par} l_par expression r_par {-> expression.expression};
+	
+	tuple =	{single} value {-> New tuple.single(value)} |
+			{multi} tuple comma value {-> New tuple.multi(tuple, value)} ;
+
+	comparison {-> comparison} = 	or_oper {-> or_oper.comparison} ;
+
+	or_oper {-> comparison} = 	{and_oper} and_oper {-> and_oper.comparison} |
+								{or_oper} or_oper or and_oper {-> New comparison.or(or_oper.comparison, and_oper.comparison)};
+	
+	and_oper {-> comparison} = 	{not_oper} not_oper {-> not_oper.comparison} |
+								{and_oper} and_oper and not_oper {-> New comparison.and(and_oper.comparison, not_oper.comparison)};
+			
+	not_oper {-> comparison} =	{boolean} boolean {-> boolean.comparison} |
+								{not_oper} not boolean {-> New comparison.not(boolean.comparison)};
+	
+	boolean {-> comparison} =	{lessc} [a]:expression less [b]:expression {-> New comparison.lessc(a, b)}|
+								{greatc}[a]:expression great [b]:expression {-> New comparison.greatc(a, b)} | 
+								{greateqc}[a]:expression gr_eq [b]:expression {-> New comparison.greateqc(a, b)} | 
+								{lesseqc}[a]:expression ls_eq [b]:expression {-> New comparison.lesseqc(a, b)} | 
+								{noteqc}[a]:expression nequals [b]:expression {-> New comparison.noteqc(a, b)} | 
+								{eqc}[a]:expression equals [b]:expression {-> New comparison.eqc(a, b)} |
+								{par} l_par comparison r_par {-> comparison.comparison} |
+								{true} true {-> New comparison.true(true)} |
+								{false} false {-> New comparison.false(false)} ;
+	
+	value = {f_call} id dot function_call {-> New value.f_call(id, function_call)} |
+			{num} number {-> New value.num(number)} |
+			{strng_ltrl} string {-> New value.strng_ltrl(string)} |
+			{null} null {-> New value.null(null)};
+
+Abstract Syntax Tree
+
+	programme = commands*;
+
+	commands = 	{stat} statement |
+				{func}function;
+
+	function = id argument statement;
+
+	argument = 	{singlev} id value |
+				{single} id |
+				{multi} [a]:argument [b]: argument ;
+
+	statement =	{if} comparison statement |
+				{while} comparison statement|
+				{for} [v1]:id [v2]:id statement|
+				{ret} expression|
+				{print} arglist |
+				{assign} id expression |
+				{assignm} id expression |
+				{assignd} id expression |
+				{arr} id [index]:expression [item]:expression |
+				{error} error |
+				{f_call} function_call;
+	
+	error = {single} expression |
+			{multi} error expression;
+
+
+	expression ={add} [a]: expression [b]: expression |
+				{sub} [a]: expression [b]: expression |
+				{mult} [a]: expression [b]: expression |
+				{div} [a]: expression [b]: expression |
+				{mod} [a]: expression [b]: expression |
+				{pow} [a]: expression [b]: expression |
+				{plusone} expression |
+				{minusone} expression |
+				{oneplus} expression |
+				{oneminus} expression |
+				{arr} id expression |
+				{f_call} function_call |
+				{value} value |
+				{identifier} id |
+				{tuple} tuple;
+	
+	tuple = {single} value |
+			{multi} tuple value;
+
+	comparison ={and} [a]: comparison [b]: comparison |
+				{or} [a]: comparison [b]: comparison |
+				{not} comparison | 
+				{lessc} [a]:expression [b]:expression|
+				{greatc}[a]:expression [b]:expression | 
+				{greateqc}[a]:expression [b]:expression | 
+				{lesseqc}[a]:expression [b]:expression | 
+				{noteqc}[a]:expression [b]:expression | 
+				{eqc}[a]:expression [b]:expression |
+				{true} true |
+				{false} false ;
+
+	function_call = id arglist;
+
+	arglist = 	{single} expression|
+				{multi} arglist expression;
+	
+	value = {f_call} id function_call |
+			{num} number |
+			{strng_ltrl} string |
+			{null} null;
