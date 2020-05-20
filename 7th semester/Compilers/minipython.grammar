@@ -1,0 +1,162 @@
+/*
+*	Γιώργος Παπαδόπουλος 	3160131
+*	Δικαία Σωτηροπούλου 	3160172
+*	Αλέξανδρος Ψαραύτης 	3160196
+*/
+
+Package minipython;
+
+Helpers
+	digit = ['0' .. '9'];
+	letter = ['a' .. 'z']|['A' .. 'Z']; 
+	cr = 13; 
+	lf = 10;
+	all = [0..127];
+	eol = lf | cr | cr lf;
+	not_eol = [all - [cr + lf]];
+
+Tokens
+	tab = 9;
+	plus1 = '++';
+	minus1 = '--';
+	plus = '+';
+	meq = '-=';
+	diveq = '/=';
+	minus = '-';
+	dmult = '**';
+	mult = '*';
+	div = '/';
+	mod = '%';
+	not = 'not';
+	and = 'and';
+	or = 'or';
+	dictt = 'dict';
+	def = 'def';
+	logic_plus = '&&';
+	l_par = '(';
+	r_par = ')';
+	l_br = '[';
+	r_br = ']';
+	dot = '.';
+	comma=',';
+	qmark = '?';
+	gqmark = ';';
+	if = 'if';
+	elif = 'elif';
+	else = 'else';
+	while = 'while';
+	for = 'for';
+	in = 'in';
+	assert = 'assert';
+	print = 'print';
+	return = 'return';
+	null = 'None';
+	gr_eq = '>=';
+	ls_eq = '<=';
+	less = '<';
+	great = '>';
+	equals = '==';
+	nequals = '!=';
+	exclam = '!';
+	eq = '=';
+	true = 'true';
+	semi = ':';
+	false = 'false';
+	quote = '"';
+	s_quote = ''';
+	blank = (' ' | lf | cr);
+	line_comment = '#' not_eol* eol; 
+	number = digit+ | (digit+ '.' digit+);
+	id = letter (letter | digit)*;
+	string = '"'not_eol* '"' | '''not_eol* ''';
+
+Ignored Tokens
+	blank, line_comment;
+	
+Productions
+
+	programme = commands*;
+
+	commands = 	{stat} statement |
+				{func}function;
+
+	function = def id l_par argument? r_par semi statement;
+
+	statement =	{if}tab* if boolean semi statement |
+				{while} tab* while boolean semi statement|
+				{for} tab* for [v1]:id in [v2]:id semi statement|
+				{ret} tab* return expression|
+				{print}tab* print arglist |
+				{assign} tab* id eq expression |
+				{assignm} tab* id meq expression |
+				{assignd} tab* id diveq expression |
+				{arr} tab* id l_br [index]:expression r_br eq [item]:expression |
+				{error} tab* assert expression c_expr? |
+				{f_call} tab* function_call;
+
+	argument = s_argument cs*;
+	
+	function_call = id l_par arglist? r_par;
+	
+	arglist = expression c_expr*;
+
+	comparison ={true} true |
+				{false} false |
+				{lessc} [lpar]:expression less [rpar]:expression|
+				{greatc}[lpar]:expression great [rpar]:expression | 
+				{greateqc}[lpar]:expression gr_eq [rpar]:expression | 
+				{lesseqc}[lpar]:expression ls_eq [rpar]:expression | 
+				{noteqc}[lpar]:expression nequals [rpar]:expression | 
+				{eqc}[lpar]:expression equals [rpar]:expression ;
+	
+	not_op ={bool} comparison |
+			{not} not comparison;
+	
+	and_op = {not} not_op |
+			{and} and_op and not_op;
+	
+	or_op = {and} and_op |
+			{or} or_op or and_op;
+					 
+	expression ={plusone} plus1 numeric |
+				{minusone} minus1 numeric |
+				{oneplus} numeric plus1 |
+				{oneminus} numeric minus1 |
+				{arr} id l_br expression r_br |
+				{f_call} function_call |
+				{value} value |
+				{tuple} l_br value comma_value* r_br;
+
+	power = {numeric} numeric |
+			{pow} power dmult numeric;
+	
+	multdiv = 	{pow} power |
+				{mult} multdiv mult power |
+				{mod} multdiv mod power |
+				{div} multdiv div power;
+	
+	addsub = 	{multdiv} multdiv |
+				{add} addsub plus multdiv |
+				{sub} addsub minus multdiv;
+				
+	value = {num} addsub |
+			{strng_ltrl} string |
+			{null} null;
+
+	numeric =	{identifier}id |
+				{f_call} id dot function_call |
+				{num} number |
+				{par} l_par expression r_par ;
+							
+	boolean =	{operation} or_op |
+				{par} l_par comparison r_par;
+
+	comma_value = comma value;
+
+	s_argument = id ev? ;
+
+	ev = eq value;
+
+	cs =comma s_argument ;
+
+	c_expr = comma expression;

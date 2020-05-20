@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+# * This file is part of SableCC.                             *
+# * See the file "LICENSE" for copyright information and the  *
+# * terms and conditions for copying, distribution and        *
+# * modification of SableCC.                                  *
+# * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+#
+# IMPORTANT: Put the absolute path to sablecc.jar below.
+java -jar lib/sablecc.jar $*
