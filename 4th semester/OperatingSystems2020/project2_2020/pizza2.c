@@ -90,7 +90,6 @@ void *exec_thread(void *threadid) {
 	status  = pthread_mutex_unlock(&lock);
 	
 	pthread_exit(NULL);
-
 }
 
 int main(int argc, char *argv[]) {
