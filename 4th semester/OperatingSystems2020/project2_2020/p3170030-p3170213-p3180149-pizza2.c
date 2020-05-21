@@ -1,4 +1,4 @@
-#include "p3170030-p3170213-p3180149-pizza2.h"
+#include "pizza2.h"
 
 pthread_mutex_t lock;
 pthread_cond_t cond;
