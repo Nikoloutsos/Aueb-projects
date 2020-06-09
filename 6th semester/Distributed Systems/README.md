@@ -17,5 +17,5 @@
  
 
 In lectures we talked about many protocols used in distributed systems but I did not like it.
-The lectures were not that good because they contained only deprecated theory without any practice.
+The lectures were not that good because they contained only deprecated theory without any practice.It looked like the teacher copy-pasted whole wikipedia (Even the same wiki pictures)
 So don't expect to learn a lot about distributed systems from this lesson.
