@@ -1,8 +1,12 @@
-An android project implemented with MVP design pattern.
+An android project implemented with MVP design pattern. It contains unit tests with good code coverage.
+
+Texnologia logismikou did not really help me improve my technical programming skills. But I enjoy it because I learned how to use gitlab(did not even know it before) and how to organize my code for making it more maintainable. Also we saw how Continuous integration works in theory and we talked about agile scrum, waterfall.
+
+Domain model, UML class diagrams, activity diagrams were taught and asked from us to implement them in the project.
+Application's goal looks pretty clear when you have made those diagrams.
+
+It is a good lesson overall for a software engineer but if you are not a guy who prefer attending lectures I suggest you read this book(it contains everything you need to know with more examples and better approach) [Clean code by Uncle BOB](https://www.bookdepository.com/Clean-Code-Robert-C.-Martin/9780132350884?redirected=true&utm_medium=Google&utm_campaign=Base1&utm_source=GR&utm_content=Clean-Code&selectCurrency=EUR&w=AFFMAU99Z98D6CA8VCP6&pdg=pla-317692435101:cmp-8750577997:adg-91861630761:crv-409974082492:pos-:dev-c&gclid=CjwKCAjw5vz2BRAtEiwAbcVILyvsFCl9uaMM-tipmTIGkdrYmuEjwrs9hei4ZaW6EvARtENKAiqcHxoCFXIQAvD_BwE)
 
 
-## Study Tracker - Team 1
-<p>Σαν φοιτητές του τμήματος πληροφορικής της ΑΣΟΕΕ έχουμε παρατηρήσει ότι δεν υπάρχει ένα χώρος όπου θα μπορούσαμε να έχουμε συγκεντρωμένες όσες πληροφορίες μας χρειάζονται για να διευκολυνθεί η οργάνωση των σπουδών μας. Αποφασίσαμε λοιπόν να λύσουμε αυτό το πρόβλημα με την υλοποίηση της εφαρμογής StudyTracker ώστε να παρέχουμε στους συμφοιτητές μας την παραπάνω δυνατότητα. Μέχρι στιγμής αδυνατεί ο φοιτητής να έχει συγκεντρωμένα σε ένα μέρος τα μαθήματα του ανα εξάμηνο μαζί με τις βαθμολογίες του και την πρόοδο του, καθώς και να προσθέτει γεγονότα για προόδους/έκτακτες διαλέξεις και άλλα πολλά. Επίσης ανακοινώσεις για δρώμενα της σχολής ανεβαίνουν στο site της σχολής(χωρίς ειδοποίηση) και πολλές φορές ο φοιτητής δεν ενημερώνεται έγκαιρα. Γίνεται κατανοητό πως μια οργάνωση των παραπάνω σε ένα χώρο θα διευκολύνει τον φοιτητή απο το να αποφύγει μια χαοτική οργάνωση των σπουδών του. <br>
-Αυτό που επιδιώκουμε να πετύχουμε μέσω του StudyTracker είναι η παροχή μιας όσο το δυνατόν εύκολης οργάνωσης των σπουδών στους φοιτητές. Η εφαρμογή απευθυνόμενη στους φοιτητές του τμήματος πληροφορικής θα τους εμαφανίσει όλα τα μαθήματα και δίπλα τους το εξάμηνο διδασκαλίας, τα ECTS που αντιστοιχούν στο μάθημα και την κατηγορία του(υποχρεωτικό, υποχρεωτικό κύκλου...). Έτσι θα μπορεί ο φοιτητής να προσθέσει μαθήματα σε εξάμηνο, να αφαιρέσει, να προσθέσει βαθμούς και να υπολογίσει μέσο όρο και ECTS. Επιπλέον θα προσθέτει γεγονότα για τα οποία θα λαμβάνει ειδοποίηση. Τέλος ειδοποιήσεις θα στέλνονται και για σημαντικά συμβάντα της σχολής. <br> Για να μην χαθούν σε περίπτωση αλλαγής συσκευής τα δεδομένα που έχει εισάγει ο χρήστης θα πρέπει σε αρχικό στάδιο να κάνει εγγραφή.  </p>
-<br>
+
 
