@@ -8,7 +8,7 @@
  ## My thoughts
  
  In this assignment we had to make a system/server that will be responsible for sending music and details about artists.
- The system should work for many users at the same time. Basically this system should be a baby version of spotify.
+ The system should work for many users at the same time. It waits for requests made from users and then it responds. Basically this system should be a baby version of spotify.
  
  In the first part of the project you learn how to use sockets for making 2 processes communicate with each other.
  The most funny thing is that if you have never used sockets before you will have to google and debug a lot. So you have to be really patient to complete the first part of the assignment.
