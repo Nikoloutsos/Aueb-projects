@@ -16,6 +16,6 @@
  In the seconds part you need to learn basics of android development. It will take less time than first part but if you don't spend time on it, it will not be done by itself. Nevertheless, because you are reading this it proves that you will complete your assignment without problems <3 
  
 
-In lectures we talkes about many protocols used in distributed systems but I did not like it.
+In lectures we talked about many protocols used in distributed systems but I did not like it.
 The lectures were not that good because they contained only deprecated theory without any practice.
 So don't expect to learn a lot about distributed systems from this lesson.
