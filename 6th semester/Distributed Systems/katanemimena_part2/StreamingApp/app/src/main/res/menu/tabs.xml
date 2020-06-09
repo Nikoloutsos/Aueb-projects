@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/tab_artists"
+        android:icon="@drawable/ic_music"
+        android:title="Artists" />
+    <item
+        android:id="@+id/tab_offline"
+        android:icon="@drawable/no_internet"
+        android:title="Offline" />
+    <item
+        android:id="@+id/tab_account"
+        android:icon="@drawable/ic_person"
+        android:title="Account" />
+
+</menu>

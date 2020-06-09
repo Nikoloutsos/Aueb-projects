@@ -1,0 +1,799 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>4</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>468</x>
+      <y>712</y>
+      <w>276</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>UserDAO
+--
+--
++ UserDAO()
++ getUsers() : List&lt;User&gt;
++ addUser(name:String, mail:String, bio:String, password:String ,userCategory:String,noSemesters:int) : User
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>736</x>
+      <y>520</y>
+      <w>84</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>BaseDAO
+--
++ final DB_USER : String
++ final DB_PASSWORD : String
+--
++ connectToDB : void
++ disconnectFromDB : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>820</x>
+      <y>716</y>
+      <w>120</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>MessageDAO
+--
+--
++ MessageDAO()
++ getAllMessages() : List&lt;Message&gt;
++ storeMessage(message : Message) : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>816</x>
+      <y>648</y>
+      <w>188</w>
+      <h>52</h>
+    </coordinates>
+    <panel_attributes>CourseDAO
+--
+- student :Student
+--
++ CourseDAO(student : Student)
++ getAllCourses() : List&lt;Course&gt;
++ getCourse(name : String) : Course
++ addCourse(name:String, description:String, ects:int, semester:int) : void
++ deleteCourse(name : String) : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>548</x>
+      <y>580</y>
+      <w>196</w>
+      <h>52</h>
+    </coordinates>
+    <panel_attributes>CoursesRegistartionDAO
+--
+- student : Student
+--
++ CoursesRegistartionDAO(student : Student)
++ getAllCoursesRegistrations() : List&lt;CoursesRegistration&gt;
++ addCourseRegistration(title:String, academicPeriod:AcademicPeriod): void
+ + deleteCourseRegistration(id:int): vod
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>816</x>
+      <y>572</y>
+      <w>204</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>RegisteredCourseDAO
+--
+- student : Student
+--
++ RegisteredCourseDAO(student : Student)
++ getAllRegisteredCourses() : List&lt;RegisteredCourse&gt;
++ getRegisteredCoursesForCourseRegistration(id : int) : List&lt;RegisteredCourse&gt;
++ addRegisteredCourse(grade:int, course:Course, courseRegistartionID) : void
++ addRegisteredCourse(course : Course, courseRegistartionID : int) : void
++ deleteRegisteredCourse(registeredCourse:RegisteredCourse) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>492</x>
+      <y>648</y>
+      <w>252</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>ReminderDAO
+--
+- student : Student
+--
++ ReminderDAO(student : Student)
++ getAllReminders() : List&lt;Reminder&gt;
++ getRemindersPerRegisteredCourse(registeredCourse : RegisteredCoourse) : List&lt;Reminder&gt;
++ addReminder(title:String, description:String, time:Time, registeredCourse:ReisteredCourse) : void
++ deleteReminder(id:int) void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>772</x>
+      <y>560</y>
+      <w>12</w>
+      <h>172</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;410.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>732</x>
+      <y>88</y>
+      <w>152</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>User
+--
+- name : String
+- mail : String
+- bio : String
+- encryptedPassword : String
+--
++User()
++User(name:String, mail:String, bio:String, password:String)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>700</x>
+      <y>176</y>
+      <w>204</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Student
+--
+- noSemesters : int
+--
++ Student()
++ Student(name:String, mail:String, bio:String, noSemesters:int, password:String)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>356</x>
+      <y>156</y>
+      <w>228</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>ManagmentUser
+--
+-validUntil : Time
+--
++ManagmentUser(name:String, mail:String, bio:String, password:String, validUntil:Time)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>928</x>
+      <y>100</y>
+      <w>136</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>Message
+--
+- title: String
+- description: String
+- timePosted : Time
+--
++ Message()
++ Message(title:String, description:String, time:Time)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>612</x>
+      <y>280</y>
+      <w>172</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>CourseRegistration
+--
+_- incrementedID: int_
+- id : int
+- title : String
+--
++ CourseRegistration()
++ CourseRegistration(title:String, academicPeriod:AcademicPeriod)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>420</x>
+      <y>280</y>
+      <w>144</w>
+      <h>52</h>
+    </coordinates>
+    <panel_attributes>AcademicPeriod
+--
+- SPRING : int=0 {readOnly}
+- AUTUMN : int=1 {readOnly}
+startYear : int
+academicSemesterType : int
+--
++ AcademicPeriod()
++ AcademicPeriod(startYear:int, academicSemester:int)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>816</x>
+      <y>280</y>
+      <w>164</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>Course
+--
+- name: String
+- description: String
+- ects : int
+- semester : int
+--
++ Cpurse()
++ Course(name:String, description:String, ects:int, semester:int) </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>736</x>
+      <y>368</y>
+      <w>248</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>RegisteredCourse
+--
+- grade : double
+--
++ RegisteredCourse(course:Course, courseRegistrationID:int)
++ RegisteredCourse(grade:int, course:Course, courseRegistrationID:int)
++ RegisteredCourse(grade:int, course:Course, courseRegistrationID:int,reminders:List&lt;Reminder&gt;)
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>444</x>
+      <y>368</y>
+      <w>252</w>
+      <h>52</h>
+    </coordinates>
+    <panel_attributes>Remider
+--
+_- incrementedID: int_
+- id : int
+- description : String
+- title : String
+--
++ Reminder()
++ Reminder(title:String, description:String, timeToRemind:Time, registeredCourse:RegisteredCourse) </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>192</x>
+      <y>356</y>
+      <w>216</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>Time
+--
+- date : int
+- month : int
+- year : int
+- seconds : int
+- minutes : int
+- hour : int
+--
+- Time(year:int, month:int,, date:int,, hour:int,, minutes:int,, seconds:int)
+_+ createTime(year:int, month:int,, date:int,, hour:int,, minutes:int,, seconds:int): Time_
++ isBefore(when : Time) : booelan
++ getReadableTime() : String
++ getTimeByCalendar(calendar : Calendar) : Time</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>748</x>
+      <y>140</y>
+      <w>12</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>940</x>
+      <y>32</y>
+      <w>88</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>Cryptography
+--
+--
+_+ md5(message : String) : String_
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>928</x>
+      <y>64</y>
+      <w>132</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>RegexUtil
+--
+- mailRegex : String= "[^@]+@[^\.]+\..+" {readOnly}
+--
+_+ isEmail(mail:String) : boolean_
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>444</x>
+      <y>200</y>
+      <w>196</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>Statistics
+--
+- dao : RegisteredCourseDAO
+--
++ Statistics(student : Student, registeredCourseDAO:RegisteredCourseDAO)
++ calculateAveragePerSemester() : double[0..noSemesters]
++ calculateECTSPerSemester() : : double[0..noSemesters]
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>820</x>
+      <y>140</y>
+      <w>12</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>780</x>
+      <y>280</y>
+      <w>44</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=*
+m2=*
+</panel_attributes>
+    <additional_attributes>10.0;20.0;90.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>796</x>
+      <y>284</y>
+      <w>12</w>
+      <h>92</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;210.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>692</x>
+      <y>364</y>
+      <w>52</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=*
+m2=1
+</panel_attributes>
+    <additional_attributes>10.0;20.0;110.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>752</x>
+      <y>208</y>
+      <w>12</w>
+      <h>76</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=*</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>752</x>
+      <y>272</y>
+      <w>12</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;20.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>844</x>
+      <y>272</y>
+      <w>12</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;20.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>560</x>
+      <y>284</y>
+      <w>16</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;20.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>560</x>
+      <y>284</y>
+      <w>60</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=1</panel_attributes>
+    <additional_attributes>130.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>404</x>
+      <y>372</y>
+      <w>48</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2= 1</panel_attributes>
+    <additional_attributes>100.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>404</x>
+      <y>372</y>
+      <w>16</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;20.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>844</x>
+      <y>208</y>
+      <w>12</w>
+      <h>76</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=*</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>580</x>
+      <y>152</y>
+      <w>180</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;430.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>356</x>
+      <y>180</y>
+      <w>12</w>
+      <h>184</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2= 1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;440.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>708</x>
+      <y>324</y>
+      <w>24</w>
+      <h>264</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+uses</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;640.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1032</x>
+      <y>284</y>
+      <w>24</w>
+      <h>376</h>
+    </coordinates>
+    <panel_attributes>
+uses</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;920.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1000</x>
+      <y>644</y>
+      <w>44</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;90.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>500</x>
+      <y>416</y>
+      <w>24</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+uses</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;580.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>924</x>
+      <y>404</y>
+      <w>24</w>
+      <h>176</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+uses</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;420.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>976</x>
+      <y>284</y>
+      <w>68</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;150.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1128</x>
+      <y>100</y>
+      <w>24</w>
+      <h>636</h>
+    </coordinates>
+    <panel_attributes>
+uses</panel_attributes>
+    <additional_attributes>10.0;10.0;20.0;1570.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1060</x>
+      <y>100</y>
+      <w>80</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;180.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>936</x>
+      <y>720</y>
+      <w>208</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;500.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>156</x>
+      <y>116</y>
+      <w>24</w>
+      <h>608</h>
+    </coordinates>
+    <panel_attributes>
+uses</panel_attributes>
+    <additional_attributes>10.0;10.0;20.0;1500.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>160</x>
+      <y>708</y>
+      <w>316</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;770.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>156</x>
+      <y>116</y>
+      <w>584</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;1440.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>740</x>
+      <y>580</y>
+      <w>44</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;90.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>740</x>
+      <y>644</y>
+      <w>44</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;90.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>740</x>
+      <y>708</y>
+      <w>44</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;90.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>772</x>
+      <y>568</y>
+      <w>52</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;110.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>772</x>
+      <y>652</y>
+      <w>52</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;110.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>772</x>
+      <y>716</y>
+      <w>56</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;120.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>636</x>
+      <y>200</y>
+      <w>72</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>
+m2=1</panel_attributes>
+    <additional_attributes>10.0;20.0;160.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>692</x>
+      <y>204</y>
+      <w>16</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>20.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>272</x>
+      <y>728</y>
+      <w>120</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>Where uses, indirectly done by the Controller</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
