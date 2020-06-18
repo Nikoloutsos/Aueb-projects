@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activity.LoginActivity"
+        android:background="#333333">
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="250dp"
+            android:layout_height="180dp"
+            android:background="#72FFFFFF"
+            app:cardCornerRadius="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#52DDDDDD">
+
+                <EditText
+                    android:id="@+id/username_edittext"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:hint="username"
+                    android:paddingLeft="4dp"
+                    android:maxLines="1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/password_edittext"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:hint="password"
+                    android:paddingLeft="4dp"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/username_edittext" />
+
+                <Button
+                    android:id="@+id/sign_in_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#1DB954"
+                    android:text="SIGN-IN"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="295dp"
+            android:layout_height="60dp"
+            app:layout_constraintBottom_toTopOf="@+id/cardView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_spotify_full_logo" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

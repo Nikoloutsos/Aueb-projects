@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.reminder.addEditDeleteReminder.ReminderAddEditActivity">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+
+            <TextView
+                android:id="@+id/title_reminder_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/prompt_medium"
+                android:text="Name"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/title_reminder_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/prompt_light"
+                android:hint="Remind me to call the professor"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/description_reminder_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/prompt_medium"
+                android:text="Description"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+
+            <EditText
+                android:id="@+id/description_reminder_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top"
+                android:lines="3"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/time_date_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/prompt_medium"
+                android:text="Date"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/time_date_et"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/prompt_light"
+                android:inputType="text"
+                android:focusable="false"
+                android:paddingLeft="32dp"
+                android:paddingRight="32dp"
+                android:text="0000-00-00"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/time_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/prompt_medium"
+                android:text="Time"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/time_et"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/prompt_light"
+                android:inputType="text"
+                android:focusable="false"
+                android:paddingLeft="32dp"
+                android:paddingRight="32dp"
+                android:text="00:00"
+                android:textSize="17sp" />
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/save_reminder_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/rounded_cyan_button"
+            android:fontFamily="@font/prompt_block"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:text="ADD REMINDER"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+        <Button
+            android:id="@+id/delete_reminder_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rounded_red_button"
+            android:fontFamily="@font/prompt_block"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:text="DELETE REMINDER"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/save_reminder_btn" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

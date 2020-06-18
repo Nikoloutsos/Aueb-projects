@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f1f1f1"
+        tools:context=".view.course.addEditDeleteCourse.CourseAddEditActivity">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginRight="16dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+
+            <TextView
+                android:id="@+id/name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/prompt_medium"
+                android:text="Name"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/name_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/prompt_light"
+                android:hint="Τεχνολογια λογισμικού"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/description_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/prompt_medium"
+                android:text="Description"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+
+            <EditText
+                android:id="@+id/description_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top"
+                android:lines="3"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/ects_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/prompt_medium"
+                android:text="Ects"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/ects_et"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/prompt_light"
+                android:gravity="center_horizontal"
+                android:inputType="number"
+                android:paddingLeft="32dp"
+                android:paddingRight="32dp"
+                android:text="7"
+                android:textAlignment="center"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/semester_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/prompt_medium"
+                android:text="Semester"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/semester_et"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/prompt_light"
+                android:inputType="number"
+                android:paddingLeft="32dp"
+                android:paddingRight="32dp"
+                android:text="3"
+                android:textSize="17sp" />
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/save_edit_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/rounded_cyan_button"
+            android:fontFamily="@font/prompt_block"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:text="ADD COURSE"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+        <Button
+            android:id="@+id/delete_course__btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rounded_red_button"
+            android:fontFamily="@font/prompt_block"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:text="DELETE COURSE"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/save_edit_btn" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

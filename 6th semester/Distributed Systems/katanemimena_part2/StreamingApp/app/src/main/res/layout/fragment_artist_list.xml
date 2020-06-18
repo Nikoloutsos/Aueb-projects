@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#333333">
+
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/loader"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/artistList_rv"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="loader.json"
+            app:lottie_loop="true" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/artistList_rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:listitem="@layout/layout_viewholder_artist_list"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+
+
+
+
+

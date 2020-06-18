@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.login.signin.LoginActivity"
+        android:background="#f1f1f1">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            android:layout_marginTop="32dp">
+
+
+            <TextView
+                android:id="@+id/email_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/prompt_medium"
+                android:text="Email"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/email_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/prompt_light"
+                android:hint="p3170122" />
+
+            <TextView
+                android:id="@+id/password_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/prompt_medium"
+                android:text="Password"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+
+            <EditText
+                android:id="@+id/password_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword" />
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/sign_in_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/rounded_cyan_button"
+            android:fontFamily="@font/prompt_block"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:text="Sign in"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+        <TextView
+            android:id="@+id/create_account_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/prompt_light"
+            android:text="Don't you have an account?\nCreate one"
+            android:textColor="#536DFE"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sign_in_btn"
+            android:layout_marginTop="16dp"
+            android:textAlignment="center"
+            android:gravity="center_horizontal" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+

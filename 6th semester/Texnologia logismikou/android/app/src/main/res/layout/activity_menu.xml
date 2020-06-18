@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.homePage.MenuActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/courses_btn"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginRight="16dp"
+                app:cardBackgroundColor="#ffffff"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#ffffff">
+
+                    <ImageView
+                        android:layout_width="92dp"
+                        android:layout_height="92dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_course"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_goneMarginRight="8dp" />
+
+
+                    <View
+                        android:layout_width="5dp"
+                        android:layout_height="match_parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:background="@color/colorAccent"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/course_title_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:fontFamily="@font/prompt_medium"
+                        android:text="Courses"
+                        android:textColor="#000000"
+                        android:textSize="24sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/course_registration_btn"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginRight="16dp"
+                app:cardBackgroundColor="#ffffff"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#ffffff">
+
+                    <ImageView
+                        android:layout_width="92dp"
+                        android:layout_height="92dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_cregistration"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_goneMarginRight="8dp" />
+
+
+                    <View
+                        android:layout_width="5dp"
+                        android:layout_height="match_parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:background="@color/colorAccent"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/course_registration_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:fontFamily="@font/prompt_medium"
+                        android:text="Course registration"
+                        android:textColor="#000000"
+                        android:textSize="24sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/reminder_btn"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginRight="16dp"
+                app:cardBackgroundColor="#ffffff"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#ffffff">
+
+                    <ImageView
+                        android:layout_width="92dp"
+                        android:layout_height="92dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_reminder"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_goneMarginRight="8dp" />
+
+
+                    <View
+                        android:layout_width="5dp"
+                        android:layout_height="match_parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:background="@color/colorAccent"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/reminder_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:fontFamily="@font/prompt_medium"
+                        android:text="Reminders"
+                        android:textColor="#000000"
+                        android:textSize="24sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/statistics_btn"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginRight="16dp"
+                app:cardBackgroundColor="#ffffff"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#ffffff">
+
+                    <ImageView
+                        android:layout_width="92dp"
+                        android:layout_height="92dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_business"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_goneMarginRight="8dp" />
+
+
+                    <View
+                        android:layout_width="5dp"
+                        android:layout_height="match_parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:background="@color/colorAccent"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/statistics_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:fontFamily="@font/prompt_medium"
+                        android:text="Statistics"
+                        android:textColor="#000000"
+                        android:textSize="24sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/prompt_light"
+            android:text="#texnologia logismikou 2020"
+            android:textColor="#333333"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginBottom="8dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

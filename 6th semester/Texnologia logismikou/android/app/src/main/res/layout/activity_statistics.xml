@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.statistic.StatisticsActivity"
+        android:background="#f1f1f1">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            android:layout_marginTop="16dp">
+
+
+            <TextView
+                android:id="@+id/mean_score_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/prompt_medium"
+                android:text="Current mean score"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/mean_score_value_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/prompt_light"
+                android:text="8.2/10.0"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#33333333" />
+
+            <TextView
+                android:id="@+id/mean_score_per_semester_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/prompt_medium"
+                android:text="Mean score per semester"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/mean_score_per_semester_value_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/prompt_light"
+                android:text="1-> 8.2\n2-> 8.2\n3-> 8.2\n4-> 8.4\n5-> 8.2\n6-> 8.2\n7-> 8.2\n8-> 4.2 "
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#33333333" />
+
+            <TextView
+                android:id="@+id/total_ects_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/prompt_medium"
+                android:text="Total ECTS"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/total_ects_value_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/prompt_light"
+                android:text="167 ECTS"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

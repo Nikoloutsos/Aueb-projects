@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activity.MainActivity"
+        android:background="#333333">
+
+        <FrameLayout
+            android:id="@+id/fragment_holder"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/animatedBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <!--https://github.com/Droppers/AnimatedBottomBar?utm_source=android-arsenal.com&utm_medium=referral&utm_campaign=8058 -->
+        <nl.joery.animatedbottombar.AnimatedBottomBar
+            android:id="@+id/animatedBar"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            app:abb_tabs="@menu/tabs"
+            app:abb_selectedTabType="text"
+            app:abb_indicatorAppearance="round"
+            app:abb_indicatorMargin="16dp"
+            app:abb_indicatorHeight="4dp"
+            app:abb_tabColor="#B3F1F1F1"
+            app:abb_tabColorDisabled="#dddddd"
+            app:abb_tabColorSelected="#1db954"
+            app:abb_indicatorColor="#1db954"
+
+
+            android:background="#15FFFFFF"
+            app:abb_textAppearance="@font/roboto_light"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

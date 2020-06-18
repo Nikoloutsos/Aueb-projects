@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.studyTrackerMember.addPushNotification.PushNotificationAddActivity">
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginRight="16dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+
+            <TextView
+                android:id="@+id/title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/prompt_medium"
+                android:text="Title"
+                android:textColor="#000000"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/title_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/prompt_light"
+                android:hint="Ενημέρωση σχετικά με COVID-19" />
+
+            <TextView
+                android:id="@+id/description_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/prompt_medium"
+                android:text="Description"
+                android:textColor="#000000"
+                android:textSize="24sp" />
+
+
+            <EditText
+                android:id="@+id/description_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/prompt_light"
+                android:text=""
+                android:gravity="top"
+                android:lines="3" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/send_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/rounded_cyan_button"
+            android:fontFamily="@font/prompt_block"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:text="SEND PUSH NOTIFICATION"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
