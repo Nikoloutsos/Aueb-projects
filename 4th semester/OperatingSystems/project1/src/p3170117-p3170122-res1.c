@@ -54,7 +54,6 @@ void * execute(void * customer_id)
 	response_code = pthread_mutex_unlock(&mutex_no_available_phones); //User is talking on the phone from now on.
 	assert_successful_mutex_action(response_code);
 	//printf("Start cid: %d \n", cid);
-        
 
 	 //start random booking
 	int random_no_seats = rand_r(&seed) % no_seat_high + no_seat_low;
