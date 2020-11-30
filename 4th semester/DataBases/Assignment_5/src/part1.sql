@@ -54,4 +54,3 @@ ADD PRIMARY KEY(listing_id, amenity_id);
 
  ALTER TABLE Listing
  drop column amenities;
-
