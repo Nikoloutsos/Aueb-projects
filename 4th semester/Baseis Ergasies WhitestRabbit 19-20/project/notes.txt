@@ -1,0 +1,42 @@
+links table has imdbId column that is wholly numeric (e.g. 0114709)
+whereas in the movies_metadata table, there is a imdb_id that references that column which includes the numeric values preceded by 'tt' (e.g. tt0114709)
+
+in all the tables, the actual movie id is simply "id" whereas in the links table, the actual movie id is "tmdbId"
+
+however, in the ratings table, movieId references the exact movieId found in the links table and not tmdbId
+
+--
+
+links table imported
+ratings table imported
+keywords table imported
+movie_metadata table imported
+credits table imported
+
+--
+
+in metadata we changed imdb id type to int by removing tt
+
+in links we deleted duplicates
+
+in keywords we deleted duplicates
+
+in credits we deleted duplicates
+
+in movies_metadata we deleted duplicates
+
+in links there are some records that don't exist, we deleted them
+
+--
+
+links primary key movieId
+keywords primary key id
+credits primary key id
+ratings cannot logically have primary keys
+movies metadata primary key id
+
+--
+
+links foreign keys tmdbId, imdbId to movies_metadata id, imdb_id
+keywords foreign key id to movies_metadata id
+credits foreign key id to movies_metadata id
