@@ -2,8 +2,8 @@
 
 Hi everyone I hope you are all good!
 
-The goal of this assignment is to Basics UI & UX concepts. To be honest with you I did not attend any lectures at all.
-The lecture were really boring and most of the things were so obvious that it was boring. 
+The goal of this assignment is to learn the Basics UI & UX concepts. To be honest with you I did not attend any lectures at all.
+The lectures were really boring and most of the things were so obvious that it was boring. 
 
 To be honest with you, for someone that has no experience at all with UI/UX the course is 'great'. 
 But me having worked 2 years now I think I know these basic concepts described in the lecture.
