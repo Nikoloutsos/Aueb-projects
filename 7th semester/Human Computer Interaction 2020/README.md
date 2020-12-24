@@ -27,3 +27,12 @@ If you do not know DSC follow the link. We are a big tech community in Athens Un
 <a href="https://ibb.co/tDMDskw"><img src="https://i.ibb.co/x6S6jPK/Simulator-Screen-Shot-i-Pad-Pro-12-9-inch-4th-generation-2020-12-21-at-11-55-30.png" alt="Simulator-Screen-Shot-i-Pad-Pro-12-9-inch-4th-generation-2020-12-21-at-11-55-30" border="0"></a>
 <a href="https://ibb.co/Df1BsSV"><img src="https://i.ibb.co/b564q8W/Simulator-Screen-Shot-i-Pad-Pro-12-9-inch-4th-generation-2020-12-21-at-11-55-23.png" alt="Simulator-Screen-Shot-i-Pad-Pro-12-9-inch-4th-generation-2020-12-21-at-11-55-23" border="0"></a>
 
+## Collaborators
+[Jerry Lapakis](https://github.com/GerasimosLap)
+
+[Konstantinos Nikoloutsos](https://github.com/Nikoloutsos)
+
+[Konstantinos Konstantopoulos](https://github.com/ntinouldinho)
+
+
+
