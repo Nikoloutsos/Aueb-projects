@@ -10,6 +10,7 @@ import UIKit
 class DuringWashingViewController: UIViewController {
 
 
+    @IBOutlet weak var descLabel: UILabel!
     @IBOutlet weak var dishImage: UIImageView!
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -48,6 +49,8 @@ class DuringWashingViewController: UIViewController {
             let image = UIImage(named: "dishwashdone")
             dishImage.image = image
             titleLabel.text = "Το πλυντήριο τελείωσε"
+            
+            descLabel.text = "Μπορείτε να ανοίξετε το πλυντήριο"
             
             actionButton.setTitle("Εντάξει", for: .normal)
             actionButton.layer.backgroundColor = .init(red: 109.0/255.0, green: 212.0/255.0, blue: 0, alpha: 1)

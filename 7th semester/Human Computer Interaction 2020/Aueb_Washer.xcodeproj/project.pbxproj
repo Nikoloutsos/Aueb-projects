@@ -27,6 +27,7 @@
 		1C3CFCEB258E494B0010A0D3 /* wash_started.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1C3CFCE8258E494B0010A0D3 /* wash_started.wav */; };
 		1C3CFCEC258E494B0010A0D3 /* wash_stopped.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1C3CFCE9258E494B0010A0D3 /* wash_stopped.wav */; };
 		1C3CFCF0258E583F0010A0D3 /* WashingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3CFCEF258E583F0010A0D3 /* WashingType.swift */; };
+		1C73C2D6259A79D200C8D812 /* RewardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C73C2D5259A79D200C8D812 /* RewardViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		1C3CFCE8258E494B0010A0D3 /* wash_started.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wash_started.wav; sourceTree = "<group>"; };
 		1C3CFCE9258E494B0010A0D3 /* wash_stopped.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wash_stopped.wav; sourceTree = "<group>"; };
 		1C3CFCEF258E583F0010A0D3 /* WashingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashingType.swift; sourceTree = "<group>"; };
+		1C73C2D5259A79D200C8D812 /* RewardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				1C3CFCCD258E3B2A0010A0D3 /* WaitingScheduledViewController.swift */,
 				1C3CFCD0258E3B3B0010A0D3 /* WaitingViewController.swift */,
 				1C3CFCD3258E3E550010A0D3 /* InfoViewController.swift */,
+				1C73C2D5259A79D200C8D812 /* RewardViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 				1C3CFCC8258E3B000010A0D3 /* DuringWashingViewController.swift in Sources */,
 				1C3CFCC5258E3AEF0010A0D3 /* CancelScheduleConfirmationViewController.swift in Sources */,
 				1C3CFCAD258E3A2A0010A0D3 /* SceneDelegate.swift in Sources */,
+				1C73C2D6259A79D200C8D812 /* RewardViewController.swift in Sources */,
 				1C3CFCF0258E583F0010A0D3 /* WashingType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
