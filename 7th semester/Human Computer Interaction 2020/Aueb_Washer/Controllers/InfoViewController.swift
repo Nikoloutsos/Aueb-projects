@@ -30,7 +30,7 @@ class InfoViewController: UIViewController {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let infoVC = storyboard.instantiateViewController(withIdentifier: "reviewVC") as! RewardViewController
-        
+
         self.navigationController?.pushViewController(infoVC, animated: true)
 
     }

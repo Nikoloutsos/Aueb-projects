@@ -29,6 +29,7 @@ class MenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "Αρχική οθόνη"
       
         timeSchedulerView.isHidden = true
         selectTimeView.isHidden = true
