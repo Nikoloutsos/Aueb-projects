@@ -18,6 +18,8 @@ Not to mention, if you contribute your name will be added in the contributors se
 Neither contributors nor me are rensponsible if you copy any project and you get caught.
 
 ## Contributors :sparkles:
+[WhitestRabbit🐇](https://github.com/WhitestRabbit)
+
 [cgeopapa](https://github.com/cgeopapa)
 
 [Jim Filippou](https://github.com/jimfilippou)
