@@ -1,0 +1,76 @@
+# =============================================================================
+# 	Assignment 2 in the IntroSec-Course HT2020, Stockholm University
+# 	Group 56
+# 	Members: Tzeni Bolena, Xavier de Verdun, Magd Khalil
+# =============================================================================
+
+# incude global tunables, such as $HOME etc
+include <tunables/global>
+
+profile usr-bin-gedit /usr/bin/gedit {
+
+  # This provides a base, which allows us to keep this file shorter
+  # The first one is the general base class
+  include <abstractions/base>
+  
+  # grants read/write priviliges for files and directories owned by the user
+  # The files / directories must be in the users HOME 
+  include <abstractions/user-write>
+
+  # Acess to the user tmp and the global tmp 
+  include <abstractions/user-tmp>
+
+  # This is needed to allow reading files in the home directory
+  # Allows to read directories recursively
+  @{HOME}/** r,
+
+  # This is needed for saving files in the home directory
+  # k is needed for locking the file
+  owner @{HOME}/** rwk,
+
+  # Then revoke access to any file in the user directory that starts with a dot
+  # k for locking files, as needed by the editor
+  audit deny @{HOME}/**/.* wklm,
+
+  # Also allow access to the users cache
+  owner @{HOME}/.cache/* rw,
+
+  # Since newer versions of ubuntu, running programs might save their files into another user specific directory within /run/user, therefore allow rw access there aswell
+  owner /run/user/[0-9]*/** rw,
+
+  # This is basically the same as above, does however block access to some dangerous files
+  # That should not be changed by regular users.
+  include <abstractions/ubuntu-browsers.d/user-files>
+
+  # allow SOCK_STREAM connection
+  unix (connect, receive, send) type=stream,
+
+  # Allow access to the user-shared files (subdirectories and files)
+  # These include things like the theme, volume monitor and more
+  /usr/share/** r,
+
+  # GTK is a toolkit for crossplattform ui-elements
+  # We will allow read access to the settings file.
+  /etc/gtk-3.0/settings.ini r,
+
+  # Allow read access to the configuration files
+  owner @{HOME}/.config/** r,
+  owner @{HOME}/.local/** r,
+  
+  # Allow reading the system fonts
+  # and font cache
+  # Note: If noticing any problems, import the fonts abstraction instead
+  /etc/fonts/* r,
+  /etc/fonts/fonts.conf/* r,
+  /var/cache/fontconfig/* r,
+  /home/ubuntu/.cache/fontconfig/* r,
+  
+  # We could not find out why this is needed and therefore blocked it.
+  # In case this causes a problem, we audit it, because it will make it easier to find the root of the problem
+  audit deny /etc/machine-id r,
+  
+  # Allow all DBus communications
+  include <abstractions/dbus-session-strict>
+  include <abstractions/dbus-strict>
+  dbus,
+}
