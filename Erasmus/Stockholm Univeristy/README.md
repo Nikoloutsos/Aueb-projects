@@ -1,4 +1,4 @@
-# Course Match
+# Courses Match
 
 |  Stockholm  |  Aueb         |
 |-------------|:-------------:|
