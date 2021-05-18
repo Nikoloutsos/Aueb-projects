@@ -1,0 +1,93 @@
+body {
+    text-align: left;
+    color: #333333;
+    display: grid;
+    grid-template-columns: auto ;
+    grid-template-rows: auto auto 80px ;
+    grid-template-areas: "nav"
+                         "main"
+                         "footer";   
+}
+
+.grid-register {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    grid-template-areas: "form1 form2";   
+}
+
+.form1 {
+    grid-area: form1;
+}
+
+.form2 {
+    grid-area: form2;
+}
+
+main {
+    grid-area: main;
+}
+
+label {
+    display: inline;
+}
+
+.cardview {
+    display: block;
+    margin: 30px auto 30px auto;
+    width: 50%;
+    padding: 30px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    box-shadow: 1px 1px 3px rgb(31, 25, 13) ;
+    margin-bottom: 90px;
+}
+
+input {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+
+.inline-label {
+    display: inline;
+}
+
+.inline-input {
+    display: inline;
+}
+
+textarea {
+    border-radius: 8px;
+    border-color: rgb(47, 14, 233);
+    width: 100%;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+#register-form-button {
+    background-color: cornflowerblue;
+    margin-top: 20px;
+}
+
+fieldset {
+    border-width: 0px;
+}
+
+@media (max-width:900px)  { /* smartphones, portrait iPhone */ 
+    .grid-register {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: auto;
+        grid-template-areas: "form1"
+                             "form2";   
+    }
+}
+
+

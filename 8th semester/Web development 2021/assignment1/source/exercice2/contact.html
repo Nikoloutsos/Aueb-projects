@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Exercise 2 - University</title>
+        <link rel='icon' href='assets/favicon.png' type='image/x-icon'>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+ 
+    <body>
+
+        <nav class="topMenu">
+                <a href="index.html">Back to homepage</a>
+                
+        </nav>
+        <img class="centeredImage topImage" src="./assets/message.png" alt="message icon" height="100" width="100">
+        <header><h2 class="centeredText">Write me a message!</h2></header>
+
+        <form class="cardview" action="/action_contact.php">
+
+            <label for="full_name">Full name*</label>
+            <input id="full_name" required="required" type="text" name="firstname" placeholder="Robert Nicolas">
+
+            <label for="email_address">Email address*</label>
+            <input id="email_address" pattern="^[a-zA-Z]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" required="required" type="text" name="lastname" placeholder="yourEmail@whatever.com">
+            
+            <label for="subject">Subject*</label>
+            <textarea required="required" minlength="30" maxlength="500" id="subject" name="subject" placeholder="Write your message here..."></textarea>
+            
+            <input class="button" type="submit" value="Send message!">
+          </form>
+         
+          <footer>
+            <i>If your message is urgent contact me directly to:</i>
+            <p><a href="mailto:konstantinosnikolouts@gmail.com">konstantinosnikolouts@gmail.com</a></p>
+            <p>Copyright @2021 Konstantinos Nikoloutsos. All rights reserved</p>
+        </footer> 
+    </body>
+
+   
+</html>

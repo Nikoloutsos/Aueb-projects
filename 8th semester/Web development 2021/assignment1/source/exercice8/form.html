@@ -1,0 +1,131 @@
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="formStyle.css" />
+    <link rel="stylesheet" href="commonStyle.css" />
+    <title>Debugging with xCode</title>
+</head>
+
+<body>
+
+    <nav id="menu" class="topMenuContainer">
+        <a href="./index.html">Article</a>
+        <a href="./resources.html">Extra Resources</a>
+        <a href="./videos.html">Videos</a>
+        <a href="./form.html">Register - Premium</a>
+    </nav>
+
+    <main class="cardview">
+        <h2>Register for premium now!</h2>
+        <form id="register-form" class="grid-register">
+            <fieldset class="form1">
+                <label class="full-line-label" id="username" for="username">Username: *</label>
+                <input class="full-line-input" autocomplete="on" type="text" required>
+
+                <label class="full-line-label" for="username">Full name: *</label>
+                <input class="full-line-input" autocomplete="on" type="text" required>
+
+                <label class="full-line-label" for="email">Email: *</label>
+                <input class="full-line-input" autocomplete="on" type="email" id="email" name="email" required>
+
+                <label class="full-line-label" id="birthday-label" for="birthday">Birth day: *</label>
+                <input type="date" id="birthday" name="birthday" required>
+
+                <label class="full-line-label" for="email">Country: *</label>
+                <input class="full-line-input" list="countries" name="browser" id="browser" required>
+                <datalist id="countries">
+                        <option value="Greece">Greece</option>
+                        <option value="India">India</option>
+                        <option value="USA">USA</option>
+                        <option value="Great Britain">Great Britain</option>
+                        <option value="Great Britain">Germany</option>
+                        <option value="Great Britain">China</option>
+                        <option value="Great Britain">Other</option>
+                    </datalist>
+
+                <label class="full-line-label" for="email">Address: *</label>
+                <input class="full-line-input" autocomplete="on" type="text" id="email" name="email" required>
+
+                <label class="full-line-label" for="email">Telephone: </label>
+                <input class="full-line-input" type="tel" id="tel" name="tel">
+
+                <label class="full-line-label" for="password">Password: *</label>
+                <input class="full-line-input" type="password" id="password" name="password" minlength="8" required>
+
+                <label class="full-line-label" for="password-validation">Repeat password: *</label>
+                <input class="full-line-input" type="password" id="password-validation" name="password-validation" required>
+
+                <details>
+                    <summary>Are my information safe</summary>
+                    <p>Sure your information is safe. Https is used and all data are encrypted and will not be shared with anyone without your consence</p>
+                </details>
+            </fieldset>
+
+            <fieldset class="form2">
+                <label class="full-line-label" for="email">Why you want to join? *</label>
+                <textarea id="join-reason" class="full-line-input" minlength="30" maxlength="100" required></textarea>
+
+                <label for="email">What's your programming goal for this year? </label>
+                <textarea class="full-line-input"></textarea>
+
+                <label for="email">How many years of experience you have on programming?</label>
+                <textarea class="full-line-input"></textarea>
+
+                <label for="email">How many hours do you study per day?</label>
+                <select class="full-line-input" id="programming-languages">
+                        <option value="hours-study-1">1</option>
+                        <option value="hours-study-2">2</option>
+                        <option value="hours-study-3">3</option>
+                        <option value="hours-study-5plus">5+</option>
+                    </select>
+
+                <label for="email">What programming language you prefer for iOS development</label>
+                <select class="full-line-input" id="programming-languages">
+                        <option value="Objective C">Objective C</option>
+                        <option value="Swift">Swift</option>
+                    </select>
+
+                <label for="email">Do you read books in general?</label>
+                <select class="full-line-input" id="programming-languages">
+                        <option value="book-love-100">Yes I love it</option>
+                        <option value="book-love-70">Sometimes</option>
+                        <option value="book-love-30">Seldom</option>
+                        <option value="book-love-0">Never</option>
+                    </select>
+
+                <label class="full-line-label" for="email">Have you started learnign swiftUI?</label>
+                <input class="full-line-input" type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+
+                <label class="full-line-label" for="email">Are you working at this moment?</label>
+                <input class="full-line-input" type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+
+
+                <label for="email">Do you prefer pair-programming?</label>
+                <input class="full-line-input" type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+
+                <label for="email">How did you find this blog?</label>
+                <select class="full-line-input" id="programming-languages">
+                        <option value="book-love-100">From a friend</option>
+                        <option value="book-love-70">From Youtube</option>
+                        <option value="book-love-30">From social media</option>
+                        <option value="book-love-0">Other</option>
+                    </select>
+
+                <input id="register-form-button" class="button" type="submit" value="Register">
+            </fieldset>
+
+        </form>
+
+    </main>
+
+    <footer class="footerContainer">
+        <p class="copyright">Copyright @2021 Konstantinos Nikoloutsos. All rights reserved</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="form.js"></script>
+
+</body>
+
+</html>

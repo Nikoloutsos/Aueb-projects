@@ -1,0 +1,112 @@
+code{
+    margin-left: 50px;
+    display: block;
+    white-space: pre;
+    position: relative;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 2;
+    background-color: #f7f7f7;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 5px; 
+  }
+
+.bigText {
+    font-size:xx-large;
+    font-family: roboto-bold;
+}
+
+body {
+    text-align: left;
+    color: #333333;
+    display: grid;
+    grid-template-columns: auto 15%;
+    grid-template-rows: auto auto 80px ;
+    grid-template-areas: "nav nav"
+                         "main side-right"
+                         "footer footer";   
+}
+
+main {
+    grid-area: main;
+}
+
+section {
+    margin: 16px;
+}
+
+img {
+    border-radius: 10px;
+}
+
+.side-left {
+    background-color: #7F534B; 
+    grid-area: side-left;
+    display: flex;
+    flex-direction: column;
+}
+
+.side-right {
+    background-color: #7F534B; 
+    grid-area: side-right;
+    display: flex;
+    flex-direction: column;
+    min-width: 170px;
+}
+
+.side-left a {
+    text-align: left;
+    margin-top: 5px;
+    color: white;
+}
+
+.side-right a {
+    text-align: left;
+    margin-top: 5px;
+    color: white;
+}
+
+.side-left h3 {
+    font-size: 23px;
+    font-weight: bold;
+    color: #333333;
+    text-align: center;
+   
+}
+
+.side-right h3 {
+    font-size: 23px;
+    font-weight: bold;
+    color: #333333;
+    text-align: center;
+}
+
+.box-left {
+    padding: 20px;
+    border: white solid 1px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 10px 10px 40px 0px;
+    margin-top: 20px;
+}
+
+.box-simple {
+    padding: 20px;
+    border: white solid 1px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 5px 5px 5px 5px;
+    margin-top: 20px;
+}
+.box-simple a{
+    color: blue;
+    text-decoration: none;
+}
+
+
+

@@ -1,0 +1,232 @@
+*, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f1f1f1;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #333333;
+}
+
+a {
+    text-decoration: none;
+    color: orange;
+}
+
+p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #333333;
+}
+
+a:visited {
+    color: peru;
+}
+
+a:active {
+    color: orange;
+}
+
+/* Topmenu */
+.topMenu {
+    display: block;
+    background-color: rgba(65, 105, 225, 0.88);
+}
+
+.topMenu > a {
+    text-align: center;
+    color: #ffffff;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    display: inline-block;
+    border-bottom: 3px solid rgba(255, 255, 255, 0);
+}
+
+.topMenu > a:first-of-type {
+    margin-left: 30px;
+}
+
+.topMenu > a:last-of-type {
+    margin-right: 30px;
+}
+
+.topMenu > a:hover {
+    text-align: center;
+    color: #ffffff;
+    font-size: 1.01em;
+    border-bottom: 3px solid white;
+    border-radius: 10%;
+}
+
+/* Main */
+main section {
+    margin: 20px;
+}
+
+#selfie {
+    float: left;
+    margin-bottom: 20px;
+    margin: 20px 20px 20px 10px;
+}
+
+h2 {
+    padding-bottom: 20px;
+}
+
+.cardview .cardview-title {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.cardview {
+    display: block;
+    margin: 30px auto 30px auto;
+    width: 50%;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 1px 1px 3px rgb(31, 25, 13) ;
+}
+
+.lastCardview {
+    margin-bottom: 150px;
+}
+
+.cardview:hover {
+    box-shadow: 1px 1px 5px rgb(31, 25, 13) ;
+}
+
+.cardviewImage {
+    display: inline;
+    margin-top: 10px;
+}
+
+.centerdImageCardView {
+    display: block;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    /* width: 40%; */
+}
+
+.centeredText {
+    text-align: center;
+}
+
+#headerTitleUniversity {
+    margin-top: 20px;
+}
+
+
+
+#selfie {
+    border-radius: 50%;
+}
+
+/* Footer */
+
+footer {
+    background-color: #333333;
+    color: #ffffff;
+    padding: 16px 30px;
+    position: fixed;
+    height: 120px;
+    bottom:0;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+footer ul {
+    list-style-type: none;
+}
+
+footer a:hover {
+    color: rgb(245, 192, 94);
+}
+
+.copyright {
+    margin-top: 15px;
+}
+
+.linkedin {
+  display: block;
+}
+
+.github {
+    display: block;
+}
+
+input {
+    margin-top: 4px;
+    margin-bottom: 8px;
+    display: block;
+    font-size: 18px;
+    padding: 5px;
+    width: 250px;
+}
+
+textarea {
+    display: block;
+    margin-top: 4px;
+    margin-bottom: 8px;
+    font-size: 18px;
+    width: 270px;
+    height: 100px;
+    border-radius: 4px;
+    padding: 5px
+}
+
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 18px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    width: 100%;
+    border-radius: 6px;
+}
+
+.button:hover {
+    background-color: #54c458;
+}
+
+.button:active {
+    background-color: #5fe663;
+}
+
+ul ul {
+    margin-left: 20px;
+}
+
+.centeredImage {
+    display: block; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.topImage {
+    margin-top: 20px;
+}
+
+@keyframes pulseText {
+    0%   {font-size: 1.0em}
+    20%  {font-size: 1.05em}
+    40%  {font-size: 1.10em}
+    60%  {font-size: 1.10em}
+    80% {font-size: 1.05em}
+    10% {font-size: 1.0em}
+}
+
+.animatedTextPulse {
+    animation-name: pulseText;
+    animation-duration: 1s;
+    animation-iteration-count: 5;
+  }

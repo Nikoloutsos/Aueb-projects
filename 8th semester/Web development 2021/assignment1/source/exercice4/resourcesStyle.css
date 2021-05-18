@@ -1,0 +1,111 @@
+body {
+    display: grid;
+    grid-template-columns: 250px auto 200px;
+    grid-template-rows: auto auto 80px ;
+    grid-template-areas: "nav nav nav"
+                         "side-left main side-right"
+                         "footer footer footer";          
+}
+
+.tutorialContainer {
+    background-color: #E5F2C9;
+    grid-area: main;
+    padding: 30px;
+}
+
+.side-left {
+    background-color: #7F534B; 
+    grid-area: side-left;
+    display: flex;
+    flex-direction: column;
+}
+
+.side-right {
+    background-color: #7F534B; 
+    grid-area: side-right;
+    display: flex;
+    flex-direction: column;
+}
+
+.side-left a {
+    text-align: left;
+    margin-top: 5px;
+    color: white;
+}
+
+.side-right a {
+    text-align: left;
+    margin-top: 5px;
+    color: white;
+}
+
+.side-left h3 {
+    font-size: 23px;
+    font-weight: bold;
+    color: #333333;
+    text-align: center;
+   
+}
+
+.side-right h3 {
+    font-size: 23px;
+    font-weight: bold;
+    color: #333333;
+    text-align: center;
+}
+
+.box-left {
+    padding: 20px;
+    border: white solid 1px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 10px 10px 40px 0px;
+    margin-top: 20px;
+}
+
+.box-simple {
+    padding: 20px;
+    border: white solid 1px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 5px 5px 5px 5px;
+    margin-top: 20px;
+}
+.box-simple a{
+    color: blue;
+    text-decoration: none;
+}
+
+.button {
+    background-color: #b11a1a;
+    border: none;
+    color: white;
+    padding: 18px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    width: 100%;
+    border-radius: 6px;
+}
+
+.button:hover {
+    background-color: #ff423f;
+}
+
+.button:active {
+    background-color: #ff0000;
+}
+
+#email {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+
+
+

@@ -1,0 +1,81 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="resourcesStyle.css">
+    <link rel="stylesheet" href="commonStyle.css"/>
+    <title>Resources</title>
+</head>
+
+<body>
+
+        <nav class="topMenuContainer"> 
+            <a href="./index.html">Article</a>
+            <a href="./resources.html">Extra Resources</a>
+            <a href="./videos.html">Videos</a>
+            <a href="./form.html">Register - Premium</a>
+        </nav>
+
+
+    <main class="tutorialContainer">
+
+        <article class="maria">
+            <h2>Charles proxy</h2>
+            <img src="assets/images/charlesImage.jpg" width="100px"/>
+            <p><i>Charles Web Debugging Proxy is a cross-platform HTTP debugging proxy server application written in Java.<br>
+                 It enables the user to view <b>HTTP, HTTPS, HTTP/2 </b> and enabled TCP port traffic accessed from, to, or via the local computer.</i>
+            </p>
+
+            <p>That means that it will be a piece of cake for you to debug API calls.<br> I use it in my work everyday for mocking API responses with a response I want. This speeds up my development as I don't have to wait for the backend to comple the API webservices. <br> It is also worth mentioning that this tool is free for use without any limitations.</p>
+            <a href="https://www.charlesproxy.com"> Click here to see</a>
+        </article>
+
+        <article>
+            <h2>Mockoon</h2>
+            <img src="assets/images/mockoonImage.png" width="100px"/>
+            <p><i>Mockoon is the easiest and quickest way to run mock API servers locally. <br>
+                No remote deployment, no account required, free, open source and cross-platform.</i>
+            </p>
+
+            <p>Another alternative to <i>Charles proxy</i> but with this tool you can a local server (localhost) and define what response to be returned for a certain call.  <br> For example you may want localhost/todo to return your todo list in a JSON format <br> This tool is mainly used for faster development time!</p>
+            <a href="https://mockoon.com"> Click here to see</a>
+        </article>
+
+        <article>
+            <h2>Google </h2>
+            <img src="assets/images/googleLogo.png" width="100px"/>
+            <p><i>A powerful search engine if used in the right way!</i>
+            </p>
+
+            <p>99% of the times someone else once had the same problem with you. Therefore if you know how to use google for efficient searches you'd get the answer.</p>
+            <a href="https://www.lifehack.org/articles/technology/20-tips-use-google-search-efficiently.html"> Learn google search tips </a>
+        </article>
+        
+    </main>
+
+    <aside class="side-left">
+        <div class="box-left">
+        <h3 id="subscribe-title">Subscribe now!</h3>
+        <input type="email" id="email" placeholder="example@gmail.com">
+        <input id="register-button" class="button" type="submit" value="Register now!">
+        </div>
+        <input id="hide-image-button" class="button" type="submit" value="Hide all images">
+    </aside>
+
+    <aside class="side-right">
+        <div class="box-simple">
+        <h3>Useful links:</h3>
+        <a href="https://stackoverflow.com">Stack Overflow</a>
+        <a href="https://www.reddit.com">Reddit</a>
+        <a href="https://www.youtube.com">Youtube</a>
+        <a href="https://www.youtube.com/watch?v=ApXoWvfEYVU&list=RDApXoWvfEYVU&start_radio=1">Music</a>
+    </div>
+    </aside>
+
+    <footer class="footerContainer">
+        <p class="copyright">Copyright @2021 Konstantinos Nikoloutsos. All rights reserved</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="commonScript.js"></script>
+</body>
+</html>

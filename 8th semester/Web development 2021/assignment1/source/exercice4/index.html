@@ -1,0 +1,109 @@
+
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="blogStyle.css"/>
+        <link rel="stylesheet" href="commonStyle.css"/>
+        <title>Debugging with xCode</title>
+    </head>
+<body>
+
+    <nav class="topMenuContainer"> 
+        <a href="./index.html">Article</a>
+        <a href="./resources.html">Extra Resources</a>
+        <a href="./videos.html">Videos</a>
+    </nav>
+
+
+    <main>
+    <section class="main-section" id="hello_world">
+      <header class="bigText">Introduction to iOS debugging</header>
+      <article>
+        <p>In computer programming and software development, debugging is the process of finding and resolving bugs within computer programs, software, or systems.</p>
+        <p>Although some people may love bugs (<a href="https://ucanr.edu/blogs/blogcore/postdetail.cfm?postnum=27487">check this out</a>), programmers hate them</p>
+        <p>Some bugs consume a lot of time which is really important if you want to be productive. In this blog post you will learn efficient techniques I use everyday as an iOS developer.</p>
+      </article>
+    </section>
+
+    <section class="main-section" id="hello_world">
+        <header class="bigText">How to use XCode for debugging</header>
+        <article>
+          <p>XCode is the recommended IDE by Apple. While some people say that other alternatives exists, there is no room for doubt that XCode is the way to go!</p>
+          <p>XCode by default contains some debugging functionality that you can use. The most famous is the breakpoint which is used 99% of the time. <br>
+            <span class="warning">Tip: Stop debugging code by using print statements because it is a bad habbit. </span>
+            <code> print(result) // Never do that!!</code>
+        </p>
+        </article>
+      </section>
+
+      <section class="main-section" id="hello_world">
+        <header class="bigText">Basics: Breadpoint debugging actions</header>
+        <article>
+          <p>Xcode comes with some functionalities after you hit a breakpoint. <br> Most used of them are: </p>
+          <ol>
+              <li>Skip <i>Used for skipping a breakpoint</i></li>
+              <li>Step over <i>For running the next line of code</i></li>
+              <li>Step into <i>Used for going deeper inside a method</i> </li>
+              <li>Step out <i>Used for going  outside a method</i></li>
+          </ol>
+
+        </article>
+      </section>
+
+      <section class="main-section">
+        <header class="bigText">Advance: View debugging</header>
+        <article>
+          <p>View debugging is a feature Apple introduced. There is no such feature in Android yet which makes it really cool! <br> What would you do if you create a custom view and the rendered result is diferrent than expected??</p>
+          <p>This is important because it helps you see what is going on in the view. See the picture below:</p>
+
+          <figure>
+            <img alt="vodafone debug" src="assets/images/vodafoneviewdebug.png" width="550"/>
+            <figcaption>View debug from my-Vodafone app iOS</figcaption>
+          </figure>
+          
+          <p><span class="warning">Tip: Use this to determine what is going wrong on rendering. </span></p>
+        </article>
+      </section>
+
+
+      <section class="main-section" >
+        <header class="bigText">Advance: Conditional debugging</header>
+        <article>
+          <p>Did you know that you can add conditions to your breakpoint? It means that if a condition is true only then the breakpoint will be activated.</p>
+          <p>You can do this by right clicking in the breakpoint and writting your condition. That condition will be evaluated at runtime which will determine if the breakpoint will be activated</p>
+          <p>I use this really often when I am attaching a breakpoint in a loop</p>
+          <figure>
+            <img alt="conditionalbreakpoint image" src="assets/images/conditionalbreakpoint.png" width="550"/>
+            <figcaption>Image illustrating how to edit breakpoint</figcaption>
+          </figure>
+          
+        </article>
+      </section>
+
+      <section class="main-section">
+        <header class="bigText">Debugging is more than finding bugs</header>
+        <article>
+          <p>It is really funny that some people underestimate the power of debugging.</p>
+          <p>Not only is debugging used for finding bugs but it can help you understand the code</p>
+          <p>Use breakpoints in your codebase and try to see what is changing and how. Believe me after this debugging will be your best friend!</p>
+          
+        </article>
+      </section>
+
+      <code>print("Thank you for reading")</code>
+
+    </main>
+  <aside class="side-right">
+      <div class="box-simple">
+      <h3>Keywords</h3>
+      <a href="https://en.wikipedia.org/wiki/Xcode">Xcode</a>
+      <a href="https://en.wikipedia.org/wiki/Debugging">Debugging</a>
+      <a href="https://en.wikipedia.org/wiki/Breakpoint">Breakpoints</a>
+      <a href="https://en.wikipedia.org/wiki/Debugging">View debugging</a>
+  </div>
+  </aside>
+
+    <footer class="footerContainer">
+        <p class="copyright">Copyright @2021 Konstantinos Nikoloutsos. All rights reserved</p>
+    </footer>
+  </body>
+  </html>

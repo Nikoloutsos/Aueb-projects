@@ -1,0 +1,95 @@
+.topMenuContainer {
+    grid-area: nav;
+    background-color: #1F0318;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.topMenuContainer > a {
+    display: block;
+    padding: 30px 80px;
+    text-decoration: none;
+    color: #ffffff;
+    font-family: roboto-regular;
+}
+
+.warning {
+    color :red;
+    font-family: roboto-light;
+}
+
+body {
+    margin: 0px;
+    background-color: #E5F2C9;
+    font-family: roboto-regular;
+}
+
+.topMenuContainer > a:hover {
+    background-color: #ffffff51;
+}
+
+.footerContainer {
+    grid-area: footer;
+    background-color: #1E1A1D;
+    color: #ffffff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer p{
+    margin: 6px;
+}
+
+figcaption {
+    margin-left: 8px;
+    color: #666666;
+}
+
+p {
+    font-family: roboto-regular;
+}
+
+footer p {
+    font-family: roboto-light;
+}
+
+h2 {
+    font-family: roboto-bold;
+}
+
+i {
+    font-family: roboto-light;
+}
+
+@font-face {
+    font-family: "roboto-bold";
+    src: url(./assets/Roboto/Roboto-Bold.ttf);
+    font-style: normal;
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: "roboto-regular";
+    src: url(./assets/Roboto/Roboto-Regular.ttf);
+    font-style: normal;
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: "roboto-light";
+    src: url(./assets/Roboto/Roboto-Light.ttf);
+}
+
+img {
+    max-width: 100%;
+}
+
+
+
+
+
