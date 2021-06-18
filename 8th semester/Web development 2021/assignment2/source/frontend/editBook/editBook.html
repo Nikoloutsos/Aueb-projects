@@ -1,0 +1,37 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="editBook.css">
+</head>
+
+<body>
+    <main id="main-content">
+
+    </main>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+<script src="./editBook.js"></script>
+<script id="form-handlebars" type="text/x-handlebars-template">
+    <div class="flex-container">
+        <img src="https://images1.penguinrandomhouse.com/cover/{{titles.isbn.$}}" />
+        <form>
+            <fieldset>
+                <label id="authorLabel" for="author">Author: *</label>
+                <input id="authorInput" autocomplete="on" type="text" value="{{authorweb}}" required>
+
+                <label id="titleLabel" for="title">Title: *</label>
+                <input id="titleInput" autocomplete="on" type="text" value="{{titleweb}}" required>
+
+                <label for="review">Write a review!</label>
+                <textarea id="reviewTextarea" minlength="10" maxlength="1000" required>{{review}}</textarea>
+
+                <input id="review-btn" class="button" value="Save" onclick="sendEditBook()">
+                <input id="review-btn" class="button2" value="Cancel" onclick="goBack()">
+            </fieldset>
+
+        </form>
+    </div>
+</script>
+
+</html>

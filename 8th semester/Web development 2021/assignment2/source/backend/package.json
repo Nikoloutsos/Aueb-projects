@@ -1,0 +1,17 @@
+{
+  "name": "book_search_aueb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Konstantinos Nikoloutsos",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "handlebar": "^1.0.0",
+    "handlebars": "^4.7.7"
+  }
+}

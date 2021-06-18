@@ -1,0 +1,60 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="favorites.css">
+</head>
+
+<body>
+    <header>
+        <nav class="topMenuContainer">
+            <a href="../searchBook/searchBook.html">Explore</a>
+            <a class="same-page" href="#">My favorite books</a>
+        </nav>
+    </header>
+    <div class="search-container">
+        <div class="search-box">
+            <input id="search-input" type="text" class="search-input" placeholder="Search a book.." onkeyup="onKeyUpSearch()">
+            <button id="search-btn" class="search-button" onclick="onSearch()">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+    </div>
+    <main id="main-content">
+
+    </main>
+</body>
+<script id="handlebars-demo" type="text/x-handlebars-template">
+    <table>
+        <tr>
+            <th></th>
+            <th>Author</th>
+            <th>Title</th>
+            <th>Actions</th>
+        </tr>
+        {{#each work}}
+        <tr>
+            <td>
+                <img style="display: block;" src="https://images1.penguinrandomhouse.com/cover/{{titles.isbn.$}}" />
+                <h4 style="display: inline;" class="review-title">comment:</h4>
+                <p style="display: inline;" class="review-txt">{{review}}</p>
+            </td>
+            <td>{{authorweb}}</td>
+            <td>{{titleweb}}</td>
+            <td>
+                <div class="actions-container">
+                    <a target="_blank" href="https://www.penguinrandomhouse.com/books/{{workid}}">See book</a>
+                    <a href="#!" class="favorite_off" id="toggle_favorite_{{workid}}" onclick="onFavoriteClicked('{{workid}}')"> Add to favorites</a>
+                    <a href="../editBook/editBook.html?workID={{workid}}" id="edit_favorite_{{workid}}">Edit Book</a>
+                </div>
+            </td>
+        </tr>
+        {{/each}}
+    </table>
+</script>
+
+<script src="https://kit.fontawesome.com/43dcc20e7a.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+<script src="./favorites.js"></script>
+
+</html>
